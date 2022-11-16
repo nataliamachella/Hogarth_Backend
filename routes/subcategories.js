@@ -6,7 +6,7 @@ const subcategoriesControllers = require("../controllers/subcategoriesController
 router.get("/", subcategoriesControllers.index);
 
 // GET SUBCATEGORY BY ID
-router.get("/:id", subcategoriesControllers.findById);
+router.get("/:url", subcategoriesControllers.findByUrl);
 
 //ADMIN ROUTES
 

@@ -10,6 +10,10 @@ Note.init(
       autoIncrement: true,
       primaryKey: true,
     },
+    title: {
+      type: s.TEXT,
+      allowNull: false,
+    },
     field_title_pre: {
       type: s.TEXT,
       allowNull: false,
@@ -31,8 +35,10 @@ Note.init(
       allowNull: false,
     },
     url: {
-      type: s.STRING,
-      allowNull: false,
+      type: s.VIRTUAL,
+      get() {
+        return this.title.replace(/\s+/g, "_").replace(/\W/g, "");
+      },
     },
     date: {
       type: s.DATE,

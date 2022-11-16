@@ -2,24 +2,24 @@ const notesServices = require("../services/notesServices.js");
 
 // GET ALL NOTES
 exports.index = (req, res) => {
-    notesServices
+  notesServices
     .findAll()
     .then((notes) => res.status(200).send(notes))
     .catch((err) => res.status(400).send(err));
 };
 
-// GET NOTE BY ID
-exports.findById = (req, res) => {
-  const id = req.params.id;
+// GET NOTE BY URL
+exports.findByUrl = (req, res) => {
+  const { url } = req.params;
   notesServices
-    .findById(id)
+    .findByUrl(url)
     .then((note) => res.status(200).send(note))
     .catch((err) => res.status(400).send(err));
 };
 
 // SEARCH NOTE
 exports.searchByQueryString = (req, res) => {
-  const queryString = req.params.queryString;
+  const { queryString } = req.query;
   notesServices
     .searchByQueryString(queryString)
     .then((notes) => res.status(200).send(notes))
@@ -39,7 +39,7 @@ exports.createNote = (req, res) => {
 
 // CHANGE NOTE
 exports.changeNote = (req, res) => {
-  const id = req.params.id;
+  const { id } = req.params;
   notesServices
     .change(id, req.body)
     .then((updatedNote) => res.status(200).send(updatedNote))
@@ -48,7 +48,7 @@ exports.changeNote = (req, res) => {
 
 // DELETE NOTE
 exports.deleteNote = (req, res) => {
-  const id = req.params.id;
+  const { id } = req.params;
   notesServices
     .delete(id)
     .then(() => res.status(204).send("Note deleted"))

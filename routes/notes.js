@@ -6,7 +6,7 @@ const notesControllers = require("../controllers/notesControllers.js");
 router.get("/", notesControllers.index);
 
 // GET NOTE BY ID
-router.get("/:id", notesControllers.findById);
+router.get("/:url", notesControllers.findByUrl);
 
 // SEARCH NOTE
 router.get("/search/:queryString", notesControllers.searchByQueryString);

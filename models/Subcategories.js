@@ -18,6 +18,12 @@ SubCategorie.init(
       type: s.INTEGER,
       allowNull: false,
     },
+    url: {
+      type: s.VIRTUAL,
+      get() {
+        return this.name.replace(/\s+/g, "_").replace(/\W/g, "");
+      },
+    },
   },
   { sequelize: db, modelName: "subCategorie" }
 );

@@ -1,13 +1,14 @@
-// const { Subcategories } = require("../categories");
-// const sequelize = require("sequelize");
+const { SubCategorie } = require("../models");
+const sequelize = require("sequelize");
 
 // exports.findAll = async () =>{
 
 // }
 
-// exports.findById = async (id) =>{
-
-// }
+exports.findByUrl = async (url) => {
+  let subCategorie = await SubCategorie.findOne({ where: { url: url } });
+  return subCategorie;
+};
 
 // exports.create = async (subcategorie) =>{
 
