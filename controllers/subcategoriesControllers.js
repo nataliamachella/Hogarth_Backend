@@ -2,17 +2,17 @@ const subcategoriesServices = require("../services/subcategoriesServices.js");
 
 // GET ALL SUBCATEGORIES
 exports.index = (req, res) => {
-    subcategoriesServices
+  subcategoriesServices
     .findAll()
     .then((subcategories) => res.status(200).send(subcategories))
     .catch((err) => res.status(400).send(err));
 };
 
 // GET SUBCATEGORY BY ID
-exports.findById = (req, res) => {
-  const id = req.params.id;
+exports.findByUrl = (req, res) => {
+  const { url } = req.params;
   subcategoriesServices
-    .findById(id)
+    .findByUrl(url)
     .then((subcategory) => res.status(200).send(subcategory))
     .catch((err) => res.status(400).send(err));
 };
