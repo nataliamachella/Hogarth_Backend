@@ -2,24 +2,24 @@ const categoriesServices = require("../services/categoriesServices.js");
 
 // GET ALL CATEGORIES
 exports.index = (req, res) => {
-    categoriesServices
+  categoriesServices
     .findAll()
     .then((categories) => res.status(200).send(categories))
     .catch((err) => res.status(400).send(err));
 };
 
-// GET CATEGORY BY ID
-exports.findById = (req, res) => {
-  const id = req.params.id;
+// GET Category BY URL
+exports.findByUrl = (req, res) => {
+  const { url } = req.params;
   categoriesServices
-    .findById(id)
+    .findByUrl(url)
     .then((category) => res.status(200).send(category))
     .catch((err) => res.status(400).send(err));
 };
 
 //ADMIN CONTROLLERS
 
-// CREATE NEW CATEGORY
+// CREATE NEW category
 exports.createCategory = (req, res) => {
   const category = req.body;
   categoriesServices
@@ -28,7 +28,7 @@ exports.createCategory = (req, res) => {
     .catch((err) => res.status(400).send(err));
 };
 
-// CHANGE CATEGORY
+// CHANGE Category
 exports.changeCategory = (req, res) => {
   const id = req.params.id;
   categoriesServices
@@ -37,7 +37,7 @@ exports.changeCategory = (req, res) => {
     .catch((err) => res.status(404).send(err));
 };
 
-// DELETE CATEGORY
+// DELETE Category
 exports.deleteCategory = (req, res) => {
   const id = req.params.id;
   categoriesServices

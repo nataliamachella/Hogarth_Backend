@@ -8,28 +8,28 @@ exports.index = (req, res) => {
     .catch((err) => res.status(400).send(err));
 };
 
-// GET SUBCATEGORY BY ID
+// GET subCategorie BY ID
 exports.findByUrl = (req, res) => {
   const { url } = req.params;
   subcategoriesServices
     .findByUrl(url)
-    .then((subcategory) => res.status(200).send(subcategory))
+    .then((subCategory) => res.status(200).send(subCategory))
     .catch((err) => res.status(400).send(err));
 };
 
 //ADMIN CONTROLLERS
 
-// CREATE NEW SUBCATEGORY
-exports.createSubcategory = (req, res) => {
-  const subcategory = req.body;
+// CREATE NEW subCategory
+exports.createSubCategory = (req, res) => {
+  const subCategory = req.body;
   subcategoriesServices
-    .create(subcategory)
-    .then((createdSubcategory) => res.status(201).send(createdSubcategory))
+    .create(subCategory)
+    .then((createdsubCategory) => res.status(201).send(createdsubCategory))
     .catch((err) => res.status(400).send(err));
 };
 
-// CHANGE SUBCATEGORY
-exports.changeSubcategory = (req, res) => {
+// CHANGE subCategory
+exports.changeSubCategory = (req, res) => {
   const id = req.params.id;
   subcategoriesServices
     .change(id, req.body)
@@ -37,7 +37,7 @@ exports.changeSubcategory = (req, res) => {
     .catch((err) => res.status(404).send(err));
 };
 
-// DELETE SUBCATEGORY
+// DELETE subCategory
 exports.deleteSubcategory = (req, res) => {
   const id = req.params.id;
   subcategoriesServices

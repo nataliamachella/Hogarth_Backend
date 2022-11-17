@@ -1,7 +1,8 @@
-const { Note } = require("../models");
+const { Note, SubCategory, Category, Subject } = require("../models");
 const sequelize = require("sequelize");
 const Op = sequelize.Op;
-const subcategoriesServices = require("../services/subcategoriesServices.js");
+const subCategoriesServices = require("./subcategoriesServices");
+const subjectServices = require("./subjectsServices");
 
 exports.findByUrl = async (url) => {
   let note = await Note.findOne({ where: { url: url } });
@@ -9,7 +10,12 @@ exports.findByUrl = async (url) => {
 };
 
 exports.findAll = async () => {
-  let notes = await Note.findAll();
+  let notes = await Note.findAll({
+    include: [
+      { model: SubCategory, include: [Category] },
+      { model: Subject, as: "subject" },
+    ],
+  });
   return notes;
 };
 
@@ -25,31 +31,68 @@ exports.searchByQueryString = async (queryString) => {
             "%" + queryString + "%"
           ),
         },
-        {},
-        {},
+        {
+          include: {
+            model: SubCategory,
+            as: "Sub-Category",
+            where: {
+              name: sequelize.where(
+                sequelize.fn("LOWER", sequelize.col("name")),
+                "LIKE",
+                "%" + queryString + "%"
+              ),
+            },
+          },
+        },
+        {
+          include: {
+            model: Category,
+            as: "Category",
+            where: {
+              name: sequelize.where(
+                sequelize.fn("LOWER", sequelize.col("name")),
+                "LIKE",
+                "%" + queryString + "%"
+              ),
+            },
+          },
+        },
       ],
     },
   });
   return notes;
 };
 
-exports.searchBySubcategory = async (subCategory) => {
-  let subCategorie = await subcategoriesServices(subCategory);
-  let notes = await Note.findAll({
-    where: { id_subcategory: subCategorie.id },
-  });
-  return notes;
-};
-
-//Se le debe pasar los datos de la note y el id de subcategory como id_subcategory
 exports.create = async (note) => {
-  let noteCreated = await Note.create(note);
+  const {
+    title,
+    fiel_title_pre,
+    fiel_title,
+    field_description,
+    fiel_img_primary,
+    field_content,
+    urlSubCategory,
+    idSubject,
+  } = note;
+  let noteCreated = await Note.create({
+    title: title,
+    fiel_title_pre: fiel_title_pre,
+    fiel_title: fiel_title,
+    field_description: field_description,
+    fiel_img_primary: fiel_img_primary,
+    field_content: field_content,
+  });
+  let subcategory = await subCategoriesServices.findByUrl(urlSubCategory);
+  let subject = await subjectServices.findById(idSubject);
+  noteCreated.setSubCategory(subcategory);
+  subject.setNote(noteCreated);
   return noteCreated;
 };
 
 exports.change = async (id, body) => {
   let note = await Note.update(body, {
     where: { id: id },
+    individualHooks: true,
     returning: true,
     plain: true,
   });
