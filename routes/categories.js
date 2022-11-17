@@ -5,18 +5,18 @@ const categoriesControllers = require("../controllers/categoriesControllers.js")
 // GET ALL CATEGORIES
 router.get("/", categoriesControllers.index);
 
-// GET CATEGORY BY ID
-router.get("/:id", categoriesControllers.findById);
+// GET Categorie BY ID
+router.get("/:url", categoriesControllers.findByUrl);
 
 //ADMIN ROUTES
 
-// CREATE NEW CATEGORY
+// CREATE NEW Category
 router.post("/create", categoriesControllers.createCategory);
 
-// CHANGE CATEGORY
+// CHANGE Category
 router.put("/change/:id", categoriesControllers.changeCategory);
 
-// DELETE CATEGORY
+// DELETE Category
 router.delete("/delete/:id", categoriesControllers.deleteCategory);
 
 module.exports = router;
