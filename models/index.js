@@ -3,6 +3,8 @@ const Subject = require("./Subject");
 const SubCategory = require("./Subcategories");
 const Note = require("./Notes");
 const Category = require("./Categories");
+const Content = require("./Content");
+const TypeContent = require("./TypeContent");
 
 SubCategory.belongsTo(Category);
 Category.hasMany(SubCategory);
@@ -18,6 +20,10 @@ Subject.belongsToMany(Note, {
   as: "note",
   foreignKey: "id_notes",
 });
+Content.belongsTo(Note);
+Note.hasMany(Content);
+Content.belongsTo(TypeContent);
+TypeContent.hasMany(Content);
 
 module.exports = {
   User,
@@ -25,4 +31,6 @@ module.exports = {
   SubCategory,
   Note,
   Category,
+  Content,
+  TypeContent,
 };

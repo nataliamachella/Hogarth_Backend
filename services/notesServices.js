@@ -1,8 +1,16 @@
-const { Note, SubCategory, Category, Subject } = require("../models");
+const {
+  Note,
+  SubCategory,
+  Category,
+  Subject,
+  Content,
+  TypeContent,
+} = require("../models");
 const sequelize = require("sequelize");
 const Op = sequelize.Op;
 const subCategoriesServices = require("./subcategoriesServices");
 const subjectServices = require("./subjectsServices");
+const typeContentServices = require("./typeContentServices");
 
 exports.findByUrl = async (url) => {
   let note = await Note.findOne({ where: { url: url } });
@@ -14,6 +22,7 @@ exports.findAll = async () => {
     include: [
       { model: SubCategory, include: [Category] },
       { model: Subject, as: "subject" },
+      { model: Content, include: [TypeContent] },
     ],
   });
   return notes;
@@ -81,6 +90,13 @@ exports.create = async (note) => {
     field_description: field_description,
     fiel_img_primary: fiel_img_primary,
     field_content: field_content,
+  });
+  field_content.map(async (contentMap) => {
+    const { field_content, position, nameTypeContent } = contentMap;
+    let typeContent = await typeContentServices.findByName(nameTypeContent);
+    let content = await Content.create({ field_content, position });
+    content.setTypeContent(typeContent);
+    content.setNote(noteCreated);
   });
   let subcategory = await subCategoriesServices.findByUrl(urlSubCategory);
   let subject = await subjectServices.findById(idSubject);
