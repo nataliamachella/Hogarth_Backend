@@ -1,0 +1,1060 @@
+{
+  "definition": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Revista WoW API",
+      "version": "1.0.0"
+    },
+    "tags": [
+      {
+        "name": "Notas",
+        "description": "Rutas referente a Notas"
+      },
+      {
+        "name": "Categorias",
+        "description": "Rutas referente a Categorias"
+      },
+      {
+        "name": "SubCategoria",
+        "description": "Rutas referente a SubCategoria"
+      },
+      {
+        "name": "Subject",
+        "description": "Rutas referente a Subject"
+      },
+      {
+        "name": "Tipo de Contenido",
+        "description": "Rutas referente a Tipo de Contenido"
+      }
+    ],
+    "paths": {
+      "/api/notes": {
+        "get": {
+          "tags": ["Notas"],
+          "summary": "Obtiene notas",
+          "description": "Obtiene todas las notas existentes",
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Note"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/notes/{url}": {
+        "get": {
+          "tags": ["Notas"],
+          "parameters": [
+            {
+              "name": "url",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "example": "Incendios_en_el_Delta_quema_intencional_sequa_y_falta_de_accin"
+              }
+            }
+          ],
+          "summary": "Obtiene una nota",
+          "description": "Obtiene una nota de acuerdo a la URL de la nota",
+          "responses": {
+            "200": {
+              "description": "Operacion Exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Note"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/note/search": {
+        "get": {
+          "tags": ["Notas"],
+          "parameters": [
+            {
+              "name": "queryString",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "example": "incendio"
+              }
+            }
+          ],
+          "summary": "Obtiene notas",
+          "description": "Obtiene notas de acuerdo a titulo, Categoria o subcategoria",
+          "responses": {
+            "200": {
+              "description": "Operacion Exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Note"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/note/create": {
+        "post": {
+          "tags": ["Notas"],
+          "requestBody": {
+            "description": "Crea una nueva Nota",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "summary": "Crea notas",
+          "description": "Crea una nota donde le tienes que pasar el subject, subcategoria, contenido, tipo de contenido y datos de la nota",
+          "responses": {
+            "200": {
+              "description": "Operacion Exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Note"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/note/change/{id}": {
+        "put": {
+          "tags": ["Notas"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Actualiza una Nota de acuerdo al id pasado como parametro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "summary": "Actualiza una Nota de acuerdo al id pasado como parametro",
+          "description": "Actualiza una Nota de acuerdo al id pasado como parametro",
+          "responses": {
+            "200": {
+              "description": "Operacion Exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Note"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/note/delete/{id}": {
+        "delete": {
+          "tags": ["Notas"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "summary": "Elimina una nota",
+          "description": "Elimina una nota de acuerdo a su id pasado por parametro",
+          "responses": {
+            "204": {
+              "description": "Operacion Exitosa"
+            }
+          }
+        }
+      },
+      "/api/categories": {
+        "get": {
+          "tags": ["Categorias"],
+          "summary": "Obtiene categorias",
+          "description": "Obtiene todas las categorias existentes",
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Category"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/categories/{url}": {
+        "get": {
+          "tags": ["Categorias"],
+          "summary": "Obtiene una categoria",
+          "description": "Obtiene una categoria de acuerdo a su URL",
+          "parameters": [
+            {
+              "name": "url",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "example": "Noticias_Actuales"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Category"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/categories/create": {
+        "post": {
+          "tags": ["Categorias"],
+          "summary": "Crea una categoria",
+          "description": "Crea una categoria",
+          "requestBody": {
+            "description": "Crea una categoria",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Category"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/categories/change/{id}": {
+        "put": {
+          "tags": ["Categorias"],
+          "summary": "Crea una categoria",
+          "description": "Crea una categoria",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Actualiza una Categoria de acuerdo al id pasado como parametro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Category"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/categories/delete/{id}": {
+        "delete": {
+          "tags": ["Categorias"],
+          "summary": "Elimina una categoria",
+          "description": "Elimina una categoria",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Operacion exitosa"
+            }
+          }
+        }
+      },
+      "/api/subcategories": {
+        "get": {
+          "tags": ["SubCategoria"],
+          "summary": "Obtiene subcategorias",
+          "description": "Obtiene todas las subcategorias existentes",
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SubCategory"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/subcategories/{url}": {
+        "get": {
+          "tags": ["SubCategoria"],
+          "summary": "Obtiene una subcategoria",
+          "description": "Obtiene una subcategoria de acuerdo a su URL",
+          "parameters": [
+            {
+              "name": "url",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "example": "Noticias_Locales"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SubCategory"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/subcategories/create": {
+        "post": {
+          "tags": ["SubCategoria"],
+          "summary": "Crea una Subcategoria",
+          "description": "Crea una Subcategoria",
+          "requestBody": {
+            "description": "Crea una Subcategoria",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubCategoryCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SubCategory"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/subcategories/change/{id}": {
+        "put": {
+          "tags": ["SubCategoria"],
+          "summary": "Actualiza una subcategoria",
+          "description": "Actualiza una subcategoria",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Actualiza una subcategoria de acuerdo al id pasado como parametro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubCategoryCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SubCategory"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/subcategories/delete/{id}": {
+        "delete": {
+          "tags": ["SubCategoria"],
+          "summary": "Elimina una subcategoria",
+          "description": "Elimina una subcategoria",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Operacion exitosa"
+            }
+          }
+        }
+      },
+      "/api/subjects": {
+        "get": {
+          "tags": ["Subject"],
+          "summary": "Obtiene Subjects",
+          "description": "Obtiene todas las Subjects existentes",
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Subject"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/subject/{id}": {
+        "get": {
+          "tags": ["Subject"],
+          "summary": "Obtiene una Subject",
+          "description": "Obtiene una Subject de acuerdo a su id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Subject"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/subject/create": {
+        "post": {
+          "tags": ["Subject"],
+          "summary": "Crea una Subject",
+          "description": "Crea una Subject",
+          "requestBody": {
+            "description": "Crea una Subject",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubjectCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Subject"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/subject/change/{id}": {
+        "put": {
+          "tags": ["Subject"],
+          "summary": "Actualiza una Subject",
+          "description": "Actualiza una Subject",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Actualiza una Subject de acuerdo al id pasado como parametro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubjectCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Subject"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/subject/delete/{id}": {
+        "delete": {
+          "tags": ["Subject"],
+          "summary": "Elimina una Subject",
+          "description": "Elimina una Subject",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Operacion exitosa"
+            }
+          }
+        }
+      },
+      "/api/typeContent": {
+        "get": {
+          "tags": ["Tipo de Contenido"],
+          "summary": "Obtiene Tipos de Contenido",
+          "description": "Obtiene todas los Tipos de Contenido existentes",
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/TypeContent"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/typeContent/{name}": {
+        "get": {
+          "tags": ["Tipo de Contenido"],
+          "summary": "Obtiene una Tipo de Contenido",
+          "description": "Obtiene un Tipo de Contenido de acuerdo a su nombre",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "example": "Clasico"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TypeContent"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/typeContent/create": {
+        "post": {
+          "tags": ["Tipo de Contenido"],
+          "summary": "Crea un Tipo de Contenido",
+          "description": "Crea un Tipo de Contenido",
+          "requestBody": {
+            "description": "Crea un Tipo de Contenido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypeContentCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TypeContent"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/typeContent/change/{id}": {
+        "put": {
+          "tags": ["Tipo de Contenido"],
+          "summary": "Actualiza un Tipo de Contenido",
+          "description": "Actualiza un Tipo de Contenido",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Actualiza un Tipo de Contenido de acuerdo al id pasado como parametro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypeContentCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TypeContent"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/typeContent/delete/{id}": {
+        "delete": {
+          "tags": ["Tipo de Contenido"],
+          "summary": "Elimina un Tipo de Contenido",
+          "description": "Elimina un Tipo de Contenido",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Operacion exitosa"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Note": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 1
+            },
+            "title": {
+              "type": "string",
+              "example": "Incendios en el Delta quema intencional, sequía y falta de acción"
+            },
+            "url": {
+              "type": "string",
+              "example": "Incendios_en_el_Delta_quema_intencional_sequa_y_falta_de_accin"
+            },
+            "createdAt": {
+              "type": "string",
+              "example": "2022-11-18T19:48:05.119Z"
+            },
+            "updatedAt": {
+              "type": "string",
+              "example": "2022-11-18T19:48:05.127Z"
+            },
+            "subCategoryId": {
+              "type": "integer",
+              "example": 1
+            },
+            "subCategory": {
+              "$ref": "#/components/schemas/SubCategory"
+            },
+            "subject": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Subject"
+              }
+            },
+            "contents": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Content"
+              }
+            }
+          }
+        },
+        "NoteCreated": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "example": "Incendios en el Delta quema intencional, sequía y falta de acción"
+            },
+            "field_content": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ContentCreated"
+              }
+            },
+            "urlSubCategory": {
+              "type": "string",
+              "example": "Noticias_Locales"
+            },
+            "idSubject": {
+              "type": "integer",
+              "example": 1
+            }
+          }
+        },
+        "SubCategory": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 1
+            },
+            "name": {
+              "type": "string",
+              "example": "Noticias Actuales"
+            },
+            "url": {
+              "type": "string",
+              "example": "Noticias_Actuales"
+            },
+            "createdAt": {
+              "type": "string",
+              "example": "2022-11-18T19:47:56.431Z"
+            },
+            "updatedAt": {
+              "type": "string",
+              "example": "2022-11-18T19:47:56.431Z"
+            },
+            "categoryId": {
+              "type": "integer",
+              "example": 1
+            },
+            "category": {
+              "$ref": "#/components/schemas/Category"
+            }
+          }
+        },
+        "SubCategoryCreated": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "example": "Noticias Locales"
+            }
+          }
+        },
+        "Category": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 1
+            },
+            "name": {
+              "type": "string",
+              "example": "Noticias Actuales"
+            },
+            "url": {
+              "type": "string",
+              "example": "Noticias_Actuales"
+            },
+            "createdAt": {
+              "type": "string",
+              "example": "2022-11-18T19:47:56.431Z"
+            },
+            "updatedAt": {
+              "type": "string",
+              "example": "2022-11-18T19:47:56.431Z"
+            }
+          }
+        },
+        "CategoryCreated": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "example": "Noticias Actuales"
+            }
+          }
+        },
+        "Content": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 1
+            },
+            "field_content": {
+              "type": "string",
+              "example": "Los incendios en el Delta siguen avanzando, la sequía y la dirección del viento no ayudan las columnas de humo invaden miles de hectáreas sin poder ponerle fin al problema.&nbsp;"
+            },
+            "position": {
+              "type": "integer",
+              "example": 1
+            },
+            "createdAt": {
+              "type": "string",
+              "example": "2022-11-18T19:48:05.123Z"
+            },
+            "updatedAt": {
+              "type": "string",
+              "example": "2022-11-18T19:48:05.126Z"
+            },
+            "noteId": {
+              "type": "integer",
+              "example": 1
+            },
+            "typeContentId": {
+              "type": "integer",
+              "example": 1
+            },
+            "typeContent": {
+              "$ref": "#/components/schemas/TypeContent"
+            }
+          }
+        },
+        "TypeContent": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 1
+            },
+            "name": {
+              "type": "string",
+              "example": "Clasico"
+            },
+            "type": {
+              "type": "string",
+              "example": "<p> <p>"
+            },
+            "createdAt": {
+              "type": "string",
+              "example": "2022-11-18T19:48:01.521Z"
+            },
+            "updatedAt": {
+              "type": "string",
+              "example": "2022-11-18T19:48:01.521Z"
+            }
+          }
+        },
+        "TypeContentCreated": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "example": "Clasico"
+            },
+            "type": {
+              "type": "string",
+              "example": "<p> <p>"
+            }
+          }
+        },
+        "Subject": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 1
+            },
+            "name": {
+              "type": "string",
+              "example": "triste"
+            },
+            "image": {
+              "type": "string",
+              "example": "imagen"
+            }
+          }
+        },
+        "SubjectCreated": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "example": "triste"
+            }
+          }
+        },
+        "ContentCreated": {
+          "type": "object",
+          "properties": {
+            "field_content": {
+              "type": "string",
+              "example": "Los incendios en el Delta siguen avanzando, la sequía y la dirección del viento no ayudan las columnas de humo invaden miles de hectáreas sin poder ponerle fin al problema.&nbsp;"
+            },
+            "position": {
+              "type": "integer",
+              "example": 1
+            },
+            "nameTypeContent": {
+              "type": "string",
+              "example": "Clasico"
+            }
+          }
+        }
+      }
+    }
+  },
+  "apis": ["routes/index.js", "config/db/index.js"]
+}
