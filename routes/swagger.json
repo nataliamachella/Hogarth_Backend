@@ -80,7 +80,7 @@
           }
         }
       },
-      "/api/note/search": {
+      "/api/notes/search": {
         "get": {
           "tags": ["Notas"],
           "parameters": [
@@ -113,7 +113,7 @@
           }
         }
       },
-      "/api/note/create": {
+      "/api/notes/create": {
         "post": {
           "tags": ["Notas"],
           "requestBody": {
@@ -143,7 +143,7 @@
           }
         }
       },
-      "/api/note/change/{id}": {
+      "/api/notes/change/{id}": {
         "put": {
           "tags": ["Notas"],
           "parameters": [
@@ -184,7 +184,7 @@
           }
         }
       },
-      "/api/note/delete/{id}": {
+      "/api/notes/delete/{id}": {
         "delete": {
           "tags": ["Notas"],
           "parameters": [
@@ -521,7 +521,7 @@
           }
         }
       },
-      "/api/subject/{id}": {
+      "/api/subjects/{id}": {
         "get": {
           "tags": ["Subject"],
           "summary": "Obtiene una Subject",
@@ -551,7 +551,7 @@
           }
         }
       },
-      "/api/subject/create": {
+      "/api/subjects/create": {
         "post": {
           "tags": ["Subject"],
           "summary": "Crea una Subject",
@@ -581,7 +581,7 @@
           }
         }
       },
-      "/api/subject/change/{id}": {
+      "/api/subjects/change/{id}": {
         "put": {
           "tags": ["Subject"],
           "summary": "Actualiza una Subject",
@@ -622,7 +622,7 @@
           }
         }
       },
-      "/api/subject/delete/{id}": {
+      "/api/subjects/delete/{id}": {
         "delete": {
           "tags": ["Subject"],
           "summary": "Elimina una Subject",
@@ -899,6 +899,10 @@
             "name": {
               "type": "string",
               "example": "Noticias Locales"
+            },
+            "urlCategory": {
+              "type": "string",
+              "example": "Noticias_Actuales"
             }
           }
         },
