@@ -521,7 +521,7 @@
           }
         }
       },
-      "/api/subject/{id}": {
+      "/api/subjects/{id}": {
         "get": {
           "tags": ["Subject"],
           "summary": "Obtiene una Subject",
@@ -551,7 +551,7 @@
           }
         }
       },
-      "/api/subject/create": {
+      "/api/subjects/create": {
         "post": {
           "tags": ["Subject"],
           "summary": "Crea una Subject",
@@ -581,7 +581,7 @@
           }
         }
       },
-      "/api/subject/change/{id}": {
+      "/api/subjects/change/{id}": {
         "put": {
           "tags": ["Subject"],
           "summary": "Actualiza una Subject",
@@ -622,7 +622,7 @@
           }
         }
       },
-      "/api/subject/delete/{id}": {
+      "/api/subjects/delete/{id}": {
         "delete": {
           "tags": ["Subject"],
           "summary": "Elimina una Subject",

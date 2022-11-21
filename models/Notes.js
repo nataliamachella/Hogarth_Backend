@@ -45,6 +45,16 @@ Note.init(
   { sequelize: db, modelName: "note" }
 );
 
+Note.beforeBulkCreate((notes, options) => {
+  notes.map((note)=>{
+    if (note.title) {
+      note.url = note.title.replace(/\s+/g, "_").replace(/\W/g, "");
+      options.fields.push("url");
+    }
+  })
+});
+
+
 Note.beforeValidate((note, options) => {
   if (note.title) {
     note.url = note.title.replace(/\s+/g, "_").replace(/\W/g, "");
