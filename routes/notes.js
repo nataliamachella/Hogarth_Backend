@@ -9,7 +9,7 @@ router.get("/", notesControllers.index);
 router.get("/:url", notesControllers.findByUrl);
 
 // SEARCH NOTE
-router.get("/search/:queryString", notesControllers.searchByQueryString);
+router.get("/search", notesControllers.searchByQueryString);
 
 //ADMIN ROUTES
 
