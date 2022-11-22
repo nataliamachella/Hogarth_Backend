@@ -21,6 +21,15 @@ Categorie.init(
   { sequelize: db, modelName: "categories" }
 );
 
+Categorie.beforeBulkCreate((categories, options) => {
+  categories.map((categorie) => {
+    if (categorie.name) {
+      categorie.url = categorie.name.replace(/\s+/g, "_").replace(/\W/g, "");
+      options.fields.push("url");
+    }
+  });
+});
+
 Categorie.beforeValidate((categorie, options) => {
   if (categorie.name) {
     categorie.url = categorie.name.replace(/\s+/g, "_").replace(/\W/g, "");
