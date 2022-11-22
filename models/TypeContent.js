@@ -11,7 +11,7 @@ TypeContent.init(
       primaryKey: true,
     },
     name: {
-      type: s.TEXT,
+      type: s.STRING,
     },
     type: {
       type: s.TEXT,

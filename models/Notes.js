@@ -11,7 +11,7 @@ Note.init(
       primaryKey: true,
     },
     title: {
-      type: s.TEXT,
+      type: s.STRING,
       allowNull: false,
     },
     // field_title_pre: {

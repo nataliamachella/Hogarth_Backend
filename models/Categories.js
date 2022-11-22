@@ -39,7 +39,6 @@ Categorie.beforeValidate((categorie, options) => {
 
 Categorie.beforeUpdate((categorie, options) => {
   categorie.url = categorie.name.replace(/\s+/g, "_").replace(/\W/g, "");
-  console.log(categorie.url);
   options.fields.push("url");
 });
 
