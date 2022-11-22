@@ -50,7 +50,7 @@
           }
         }
       },
-      "/api/notes/{url}": {
+      "/api/notes/byURL/{url}": {
         "get": {
           "tags": ["Notas"],
           "parameters": [

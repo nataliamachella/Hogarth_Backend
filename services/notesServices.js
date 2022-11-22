@@ -29,7 +29,7 @@ exports.findAll = async () => {
 };
 
 exports.searchByQueryString = async (queryString) => {
-  queryString.toLowerCase();
+  let str = queryString.toLowerCase();
   let notes = await Note.findAll({
     where: {
       [Op.or]: [
@@ -37,37 +37,23 @@ exports.searchByQueryString = async (queryString) => {
           title: sequelize.where(
             sequelize.fn("LOWER", sequelize.col("title")),
             "LIKE",
-            "%" + queryString + "%"
+            "%" + str + "%"
           ),
         },
         {
-          include: {
-            model: SubCategory,
-            as: "Sub-Category",
-            where: {
-              name: sequelize.where(
-                sequelize.fn("LOWER", sequelize.col("name")),
-                "LIKE",
-                "%" + queryString + "%"
-              ),
-            },
-          },
-        },
-        {
-          include: {
-            model: Category,
-            as: "Category",
-            where: {
-              name: sequelize.where(
-                sequelize.fn("LOWER", sequelize.col("name")),
-                "LIKE",
-                "%" + queryString + "%"
-              ),
-            },
-          },
+          "$subCategory.name$": sequelize.where(
+            sequelize.fn("LOWER", sequelize.col("subCategory.name")),
+            "LIKE",
+            "%" + str + "%"
+          ),
         },
       ],
     },
+    include: [
+      { model: SubCategory, include: [Category] },
+      { model: Subject, as: "subject" },
+      { model: Content, include: [TypeContent] },
+    ],
   });
   return notes;
 };
