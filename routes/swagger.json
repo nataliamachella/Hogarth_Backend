@@ -184,6 +184,29 @@
           }
         }
       },
+      "/api/notes/deleteContent/{id}": {
+        "delete": {
+          "tags": ["Notas"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "summary": "Elimina un parrafo de una nota",
+          "description": "Elimina uun parrafo de una nota a su id pasado por parametro",
+          "responses": {
+            "204": {
+              "description": "Operacion Exitosa"
+            }
+          }
+        }
+      },
       "/api/notes/delete/{id}": {
         "delete": {
           "tags": ["Notas"],
@@ -805,6 +828,26 @@
               "type": "string",
               "example": "Incendios en el Delta quema intencional, sequía y falta de acción"
             },
+            "field_title_pre": {
+              "type": "string",
+              "example": "Incendios en el Delta"
+            },
+            "field_title": {
+              "type": "string",
+              "example": " quema intencional, sequía y falta de acción"
+            },
+            "field_description": {
+              "type": "string",
+              "example": "La Ley de Humedales sigue paralizada en el Congreso mientras que entre mayo y agosto el ministerio de Ambiente recibió más de 2.500 alertas por incendios entre la zona que se encuentra entre Santa Fe, parte de Buenos Aires y Entre Ríos."
+            },
+            "author": {
+              "type": "string",
+              "example": "CH"
+            },
+            "field_img_primary": {
+              "type": "string",
+              "example": "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-08/diseno_sin_titulo_1_5.jpg.webp"
+            },
             "url": {
               "type": "string",
               "example": "Incendios_en_el_Delta_quema_intencional_sequa_y_falta_de_accin"
@@ -844,6 +887,26 @@
             "title": {
               "type": "string",
               "example": "Incendios en el Delta quema intencional, sequía y falta de acción"
+            },
+            "field_title_pre": {
+              "type": "string",
+              "example": "Incendios en el Delta:"
+            },
+            "field_title": {
+              "type": "string",
+              "example": " quema intencional, sequía y falta de acción"
+            },
+            "field_description": {
+              "type": "string",
+              "example": "La Ley de Humedales sigue paralizada en el Congreso mientras que entre mayo y agosto el ministerio de Ambiente recibió más de 2.500 alertas por incendios entre la zona que se encuentra entre Santa Fe, parte de Buenos Aires y Entre Ríos."
+            },
+            "author": {
+              "type": "string",
+              "example": "CH"
+            },
+            "field_img_primary": {
+              "type": "string",
+              "example": "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-08/diseno_sin_titulo_1_5.jpg.webp"
             },
             "field_content": {
               "type": "array",
@@ -966,13 +1029,6 @@
             "noteId": {
               "type": "integer",
               "example": 1
-            },
-            "typeContentId": {
-              "type": "integer",
-              "example": 1
-            },
-            "typeContent": {
-              "$ref": "#/components/schemas/TypeContent"
             }
           }
         },
@@ -1050,10 +1106,6 @@
             "position": {
               "type": "integer",
               "example": 1
-            },
-            "nameTypeContent": {
-              "type": "string",
-              "example": "Clasico"
             }
           }
         }

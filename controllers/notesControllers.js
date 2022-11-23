@@ -46,6 +46,14 @@ exports.changeNote = (req, res) => {
     .catch((err) => res.status(404).send(err));
 };
 
+exports.deleteContent = (req, res, next) => {
+  const { id } = req.params;
+  notesServices
+    .deleteContent(id)
+    .thne(() => res.status(204).send("Content deleted"))
+    .catch(() => res.send(next));
+};
+
 // DELETE NOTE
 exports.deleteNote = (req, res) => {
   const { id } = req.params;

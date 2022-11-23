@@ -22,8 +22,6 @@ Subject.belongsToMany(Note, {
 });
 Content.belongsTo(Note);
 Note.hasMany(Content);
-Content.belongsTo(TypeContent);
-TypeContent.hasMany(Content);
 
 module.exports = {
   User,

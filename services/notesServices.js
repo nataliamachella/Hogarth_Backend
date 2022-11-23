@@ -1,19 +1,18 @@
-const {
-  Note,
-  SubCategory,
-  Category,
-  Subject,
-  Content,
-  TypeContent,
-} = require("../models");
+const { Note, SubCategory, Category, Subject, Content } = require("../models");
 const sequelize = require("sequelize");
 const Op = sequelize.Op;
 const subCategoriesServices = require("./subcategoriesServices");
 const subjectServices = require("./subjectsServices");
-const typeContentServices = require("./typeContentServices");
 
 exports.findByUrl = async (url) => {
-  let note = await Note.findOne({ where: { url: url } });
+  let note = await Note.findOne({
+    where: { url: url },
+    include: [
+      { model: SubCategory, include: [Category] },
+      { model: Subject, as: "subject" },
+      { model: Content },
+    ],
+  });
   return note;
 };
 
@@ -22,7 +21,7 @@ exports.findAll = async () => {
     include: [
       { model: SubCategory, include: [Category] },
       { model: Subject, as: "subject" },
-      { model: Content, include: [TypeContent] },
+      { model: Content },
     ],
   });
   return notes;
@@ -52,7 +51,7 @@ exports.searchByQueryString = async (queryString) => {
     include: [
       { model: SubCategory, include: [Category] },
       { model: Subject, as: "subject" },
-      { model: Content, include: [TypeContent] },
+      { model: Content },
     ],
   });
   return notes;
@@ -61,27 +60,27 @@ exports.searchByQueryString = async (queryString) => {
 exports.create = async (note) => {
   const {
     title,
-    fiel_title_pre,
-    fiel_title,
+    field_title_pre,
+    field_title,
     field_description,
-    fiel_img_primary,
+    author,
+    field_img_primary,
     field_content,
     urlSubCategory,
     idSubject,
   } = note;
   let noteCreated = await Note.create({
     title: title,
-    fiel_title_pre: fiel_title_pre,
-    fiel_title: fiel_title,
+    field_title_pre: field_title_pre,
+    field_title: field_title,
     field_description: field_description,
-    fiel_img_primary: fiel_img_primary,
+    author: author,
+    field_img_primary: field_img_primary,
     field_content: field_content,
   });
   field_content.map(async (contentMap) => {
-    const { field_content, position, nameTypeContent } = contentMap;
-    let typeContent = await typeContentServices.findByName(nameTypeContent);
+    const { field_content, position } = contentMap;
     let content = await Content.create({ field_content, position });
-    content.setTypeContent(typeContent);
     content.setNote(noteCreated);
   });
   let subcategory = await subCategoriesServices.findByUrl(urlSubCategory);
@@ -99,6 +98,11 @@ exports.change = async (id, body) => {
     plain: true,
   });
   return note;
+};
+
+exports.deleteContent = async (id) => {
+  let content = await Content.destroy({ where: { id: id } });
+  return content;
 };
 
 exports.delete = async (id) => {
