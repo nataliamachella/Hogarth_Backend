@@ -21,6 +21,15 @@ SubCategory.init(
   { sequelize: db, modelName: "subCategory" }
 );
 
+SubCategory.beforeBulkCreate((subcategories, options) => {
+  subcategories.map((subcategory)=>{
+    if (subcategory.name) {
+      subcategory.url = subcategory.name.replace(/\s+/g, "_").replace(/\W/g, "");
+      options.fields.push("url");
+    }
+  })
+});
+
 SubCategory.beforeValidate((subcategory, options) => {
   if (subcategory.name) {
     subcategory.url = subcategory.name.replace(/\s+/g, "_").replace(/\W/g, "");

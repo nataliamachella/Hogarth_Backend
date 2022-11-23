@@ -5,15 +5,15 @@ const subjectSeed = require("./subject");
 const typeContentSeed = require("./typeContent");
 
 module.exports = function () {
-  return categorySeed().then(
-    subCategorySeed().then(
-      subjectSeed().then(
-        typeContentSeed().then(
-          noteSeed()
-            .then(() => console.log("Database Seedeada"))
-            .catch((err) => console.log(err))
-        )
+  return categorySeed().then(()=>{
+    subCategorySeed()
+    subjectSeed().then(
+      typeContentSeed().then(
+        noteSeed()
+          .then(() => console.log("Database Seedeada"))
+          .catch((err) => console.log(err))
       )
     )
+  }
   );
 };
