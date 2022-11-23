@@ -19,6 +19,8 @@ router.post("/create", notesControllers.createNote);
 // CHANGE NOTE
 router.put("/change/:id", notesControllers.changeNote);
 
+router.delete("/deleteContent/:id", notesControllers.deleteContent);
+
 // DELETE NOTE
 router.delete("/delete/:id", notesControllers.deleteNote);
 

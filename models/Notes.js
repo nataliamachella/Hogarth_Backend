@@ -14,33 +14,29 @@ Note.init(
       type: s.STRING,
       allowNull: false,
     },
-    // field_title_pre: {
-    //   type: s.TEXT,
-    //   // allowNull: false,
-    // },
-    // field_title: {
-    //   type: s.TEXT,
-    //   allowNull: false,
-    // },
-    // field_description: {
-    //   type: s.TEXT,
-    //   allowNull: false,
-    // },
-    // field_img_primary: {
-    //   type: s.BLOB("long"),
-    //   // allowNull: false,
-    // },
-    // field_content: {
-    //   type: s.TEXT,
-    //   allowNull: false,
-    // },
+    field_title_pre: {
+      type: s.TEXT,
+      allowNull: false,
+    },
+    field_title: {
+      type: s.TEXT,
+      allowNull: false,
+    },
+    field_description: {
+      type: s.TEXT,
+      allowNull: false,
+    },
+    author: {
+      type: s.STRING,
+      allowNull: false,
+    },
+    field_img_primary: {
+      type: s.STRING,
+      allowNull: false,
+    },
     url: {
       type: s.STRING,
     },
-    // date: {
-    //   type: s.DATE,
-    //   // allowNull: false,
-    // },
   },
   { sequelize: db, modelName: "note" }
 );
