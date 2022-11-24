@@ -19,7 +19,7 @@ const fakeSubcategories = [
   },
   {
     name: "Espiritualidad",
-    urlCategory: "Calidad de Vida",
+    urlCategory: "Calidad_de_Vida",
   },
   {
     name: "Sustentabilidad",
@@ -27,15 +27,15 @@ const fakeSubcategories = [
   },
   {
     name: "Mi Cuerpo",
-    urlCategory: "Calidad de Vida",
+    urlCategory: "Calidad_de_Vida",
   },
   {
     name: "Salud Mental",
-    urlCategory: "Calidad de Vida",
+    urlCategory: "Calidad_de_Vida",
   },
   {
     name: "Astroligia",
-    urlCategory: "Calidad de Vida",
+    urlCategory: "Calidad_de_Vida",
   },
   {
     name: "Empoderamiento",
