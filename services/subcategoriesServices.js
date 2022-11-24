@@ -13,7 +13,23 @@ exports.findAll = async () => {
 };
 
 exports.findByUrl = async (url) => {
-  let subCategory = await SubCategory.findOne({ where: { url: url } });
+  let subCategory = await SubCategory.findOne({
+    where: { url: url },
+    include: [
+      { model: Category },
+      { model: Note, include: [{ model: Subject, as: "subject" }] },
+    ],
+  });
+  return subCategory;
+};
+
+exports.findByCategory = async (name) => {
+  let subCategory = await SubCategory.findAll({
+    include: [
+      { model: Category, where: { name: name } },
+      { model: Note, include: [{ model: Subject, as: "subject" }] },
+    ],
+  });
   return subCategory;
 };
 

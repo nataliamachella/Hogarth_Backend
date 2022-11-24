@@ -51,7 +51,7 @@ exports.deleteContent = (req, res, next) => {
   notesServices
     .deleteContent(id)
     .thne(() => res.status(204).send("Content deleted"))
-    .catch(() => res.send(next));
+    .catch(next);
 };
 
 // DELETE NOTE

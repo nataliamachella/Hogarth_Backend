@@ -17,6 +17,14 @@ exports.findByUrl = (req, res) => {
     .catch((err) => res.status(400).send(err));
 };
 
+exports.findByCategory = (req, res, next) => {
+  const { name } = req.params;
+  subcategoriesServices
+    .findByCategory(name)
+    .then((subCategory) => res.send(subCategory))
+    .catch(next);
+};
+
 //ADMIN CONTROLLERS
 
 // CREATE NEW subCategory
