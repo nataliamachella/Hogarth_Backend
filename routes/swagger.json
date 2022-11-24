@@ -398,7 +398,7 @@
           }
         }
       },
-      "/api/subcategories/{url}": {
+      "/api/subcategories/findByUrl/{url}": {
         "get": {
           "tags": ["SubCategoria"],
           "summary": "Obtiene una subcategoria",
@@ -411,6 +411,36 @@
               "schema": {
                 "type": "string",
                 "example": "Noticias_Locales"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SubCategory"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/subcategories/findByCategory/{name}": {
+        "get": {
+          "tags": ["SubCategoria"],
+          "summary": "Obtiene una subcategoria",
+          "description": "Obtiene una subcategoria de acuerdo a su URL",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "example": "Actualidad"
               }
             }
           ],
