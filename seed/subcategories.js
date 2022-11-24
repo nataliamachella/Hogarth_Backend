@@ -23,7 +23,7 @@ const fakeSubcategories = [
   },
   {
     name: "Sustentabilidad",
-    urlCategory: "Calidad de Vida",
+    urlCategory: "Calidad_de_Vida",
   },
   {
     name: "Mi Cuerpo",
@@ -91,11 +91,11 @@ const fakeSubcategories = [
   },
   {
     name: "Moda",
-    urlCategory: "Tendencia",
+    urlCategory: "Tendencias",
   },
   {
     name: "Belleza",
-    urlCategory: "Tendencia",
+    urlCategory: "Tendencias",
   },
 ];
 
