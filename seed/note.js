@@ -328,7 +328,7 @@ const fakeNotes = [
     ],
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-10/citas_portada.jpg.webp?itok=tupYN1-_",
-    urlSubCategory: "Amores",
+    urlSubCategory: "Relaciones",
     idSubject: 1,
   },
   {
@@ -457,8 +457,8 @@ const fakeNotes = [
       },
     ],
     field_img_primary:
-    "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/gettyimages-521096340.jpg.webp?itok=KxV0IaP2",
-    urlSubCategory: "Salud Mental",
+      "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/gettyimages-521096340.jpg.webp?itok=KxV0IaP2",
+    urlSubCategory: "Salud_Mental",
     idSubject: 1,
   },
 ];

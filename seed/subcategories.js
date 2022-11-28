@@ -34,7 +34,7 @@ const fakeSubcategories = [
     urlCategory: "Calidad_de_Vida",
   },
   {
-    name: "Astroligia",
+    name: "Astrologia",
     urlCategory: "Calidad_de_Vida",
   },
   {
@@ -100,7 +100,7 @@ const fakeSubcategories = [
 ];
 
 module.exports = function () {
-  return fakeSubcategories.map((subcategories)=>{
+  return fakeSubcategories.map((subcategories) => {
     return subcategoriesServices.create(subcategories);
-  })
+  });
 };
