@@ -26,6 +26,18 @@ exports.searchByQueryString = (req, res) => {
     .catch((err) => res.status(400).send(err));
 };
 
+//Find by category url
+exports.findByCategory = (req, res) => {
+  const { url } = req.params;
+  notesServices
+    .findByCategory(url)
+    .then((notes) => {
+      let notesFilter = notes.filter((note) => note.subCategory !== null);
+      res.status(200).send(notesFilter);
+    })
+    .catch((err) => res.status(400).send(err));
+};
+
 //ADMIN CONTROLLERS
 
 // CREATE NEW NOTE

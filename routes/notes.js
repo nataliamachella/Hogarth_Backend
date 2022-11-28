@@ -11,6 +11,9 @@ router.get("/byURL/:url", notesControllers.findByUrl);
 // SEARCH NOTE
 router.get("/search", notesControllers.searchByQueryString);
 
+// FIND BY CATEGORY
+router.get("/byCategory/:url", notesControllers.findByCategory);
+
 //ADMIN ROUTES
 
 // CREATE NEW NOTE
