@@ -57,6 +57,19 @@ exports.searchByQueryString = async (queryString) => {
   return notes;
 };
 
+exports.findByCategory = async (url) => {
+  const notes = await Note.findAll({
+    include: [
+      {
+        model: SubCategory,
+        include: [{ model: Category, where: { url: url } }],
+      },
+    ],
+    order: [["id", "DESC"]],
+  });
+  return notes;
+};
+
 exports.create = async (note) => {
   const {
     title,

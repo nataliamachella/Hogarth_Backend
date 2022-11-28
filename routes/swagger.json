@@ -113,6 +113,36 @@
           }
         }
       },
+      "/api/notes/byCategory/{url}": {
+        "get": {
+          "tags": ["Notas"],
+          "parameters": [
+            {
+              "name": "url",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "example": "Actualidad"
+              }
+            }
+          ],
+          "summary": "Obtiene una nota",
+          "description": "Obtiene una nota de acuerdo a la URL de la nota",
+          "responses": {
+            "200": {
+              "description": "Operacion Exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Note"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "/api/notes/create": {
         "post": {
           "tags": ["Notas"],
