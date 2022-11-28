@@ -16,7 +16,17 @@ exports.findAll = async () => {
 };
 
 exports.findByUrl = async (url) => {
-  let category = await Category.findOne({ where: { url: url } });
+  let category = await Category.findOne({
+    where: { url: url },
+    include: [
+      {
+        model: SubCategory,
+        include: [
+          { model: Note, include: [{ model: Subject, as: "subject" }] },
+        ],
+      },
+    ],
+  });
   return category;
 };
 

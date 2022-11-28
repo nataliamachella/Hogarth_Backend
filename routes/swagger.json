@@ -264,7 +264,7 @@
               "required": true,
               "schema": {
                 "type": "string",
-                "example": "Noticias_Actuales"
+                "example": "Actualidad"
               }
             }
           ],
@@ -967,7 +967,7 @@
             },
             "url": {
               "type": "string",
-              "example": "Noticias_Actuales"
+              "example": "Actualidad"
             },
             "createdAt": {
               "type": "string",
@@ -995,7 +995,7 @@
             },
             "urlCategory": {
               "type": "string",
-              "example": "Noticias_Actuales"
+              "example": "Actualidad"
             }
           }
         },
@@ -1012,7 +1012,7 @@
             },
             "url": {
               "type": "string",
-              "example": "Noticias_Actuales"
+              "example": "Actualidad"
             },
             "createdAt": {
               "type": "string",
