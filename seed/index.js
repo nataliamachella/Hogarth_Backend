@@ -9,10 +9,9 @@ module.exports = function () {
     subCategorySeed()
     subjectSeed().then(
       typeContentSeed().then(
-        noteSeed()
-          .then(() => console.log("Database Seedeada"))
-          .catch((err) => console.log(err))
-      )
+        noteSeed() 
+      ).then(() => console.log("Database Seedeada"))
+      .catch((err) => console.log(err))
     )
   }
   );
