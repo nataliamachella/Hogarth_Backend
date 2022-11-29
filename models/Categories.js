@@ -14,6 +14,14 @@ Categorie.init(
       type: s.STRING,
       allowNull: false,
     },
+    description: {
+      type: s.STRING,
+      allowNull: false,
+    },
+    image: {
+      type: s.STRING,
+      allowNull: false,
+    },
     url: {
       type: s.STRING,
     },
