@@ -529,6 +529,135 @@ const fakeNotes = [
     urlSubCategory: "Historias",
     idSubject: 1,
   },
+  {
+    title: "3 posiciones sexuales para potenciar el placer",
+    field_title_pre: "Sexo.",
+    field_title: "3 posiciones sexuales para potenciar el placer",
+    field_description:
+      "Te acercamos tres posiciones que nos sugiere una sexóloga: una está pensada para una pareja heterosexual, otra, para una pareja de mujeres y la tercera para dos varones. Todas, enfocadas en encontrar placer.",
+    author: "Ariel Escalante",
+    field_content: [
+      {
+        field_content_title: null,
+        field_content:
+          '<p><span><span><span><span><span><span>Si nos tomamos al sexo como un juego placentero, está bueno explorar lo que nos sugieren sexólogas copadas que se enfocan en que cada quien encuentre su forma de vivir el placer. No tiene por qué ser siempre la penetración,<strong> hay mil formas del erotismo: la autoestimulación, las caricias por todo el cuerpo propio y ajeno, las prácticas orales, los besos, la exploración con los dedos</strong>… entre tantas cosas.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>La sexóloga clínica y educativa Analía Pereyra es una defensora de que cada quien explore y encuentre las prácticas sexoafectivas que más le gusten. En esta nota, <a href="https://www.somosohlala.com/amores/sexo/5-posiciones-sexuales-que-ponen-el-foco-en-el-orgasmo-femenino-nid11062022"><strong>nos acerca tres posturas, posiciones sexuales enfocadas en el placer.</strong></a></span></span></span></span></span></span></p>\r\n',
+        position: 1,
+      },
+      {
+        field_content_title: "Postura sexual para héteros",
+        field_content:
+          "<p><span><span><span><span><span><span>“Cuando hablamos de posturas, la número uno es la<strong> técnica de la alineación coital”, </strong>dice Analía. Y refiere a <strong>la pose llamada “El misionero”: </strong>En principio se pensaría que es la más clásica de todas las posiciones: en una pareja hétero consiste en que la mujer esté acostada y el varón se posicione encima, o bien, parados. </span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Pero la sexóloga suma algunas precisiones que garantizan el placer, sobre todo, de la mujer, que requiere algo más que el simple “bombeo” para llegar al clímax. “El varón se coloca penetrando un poquito más arriba de lo normal, como entrando por la parte superior del canal vaginal. Ahí, en lugar de empujar y hacer el bombeo hacia adentro y hacia afuera él debe mover la pelvis en un movimiento de balanceo. Y, si la mujer hace lo mismo y el balanceo es de los dos, ¡mucho mejor!”, dice.</span></span></span></span></span></span></p>\r\n",
+        position: 2,
+      },
+      {
+        field_content_title: "Postura sexual para parejas gays",
+        field_content:
+          '<p><span><span><span><span><span><span><strong>“Suele circular mucho que, entre los varones gays, siempre se da la penetración por detrás. </strong>Pero puede que a algunos varones les guste penetrar o ser penetrados solamente. O a algunos les gusten ambas cosas. A otros ninguna de las dos”, empieza la sexóloga. Alguna vez, <a href="https://www.somosohlala.com/amores/sexo/que-es-el-petting-o-sexo-sin-penetracion-nid31082022">en OHLALÁ! hablamos del “petting”. </a></span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>“Está bueno desarmar esto que antes se hablaba: ¿quién es activo, quién es pasivo? Porque siempre la “actividad” presupone a la persona que penetra, y hasta se asociaba que era más gay el que era penetrado”, dice, por comentarios de propios consultantes gays que atiende. “Hay que empezar a desarmar esas construcciones”.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Agrega: “Sepamos que generalmente <strong>ya no hay activos y pasivos, </strong>que no van esas etiquetas, y que los roles en las parejas cambian”. Suma que, también,<strong> se puede disfrutar del sexo entre varones gays sin practicar una penetración anal: se pueden realizar prácticas orales, de caricias, distintas manifestaciones sexo-afectivas.</strong></span></span></span></span></span></span></p>\r\n',
+        position: 3,
+      },
+      {
+        field_content_title: "Postura sexual para dos mujeres",
+        field_content:
+          '<p><span><span><span><span><span><span>“Una buena postura para dos personas con vulva podría ser colocándose frente a frente acostadas y, luego de la estimulación de todo el cuerpo -de autoestimularse con las manos cada una y/o cruzadas- se pueden entrelazar las piernas y, una de ellas, puede ponerse por encima simulando una postura parecida al misionero para que se genere el roce de las vulvas”, describe.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Sugiere que la persona que está abajo se ponga un almohadón por debajo de sus caderas para que la pelvis esté un poco más arriba y ahí genere una mejor fricción vulva con vulva.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span><strong>“Recordemos que las personas con vulva sentimos placer a partir de la estimulación del clítoris”, </strong>señala Analía. <a href="https://www.somosohlala.com/amores/sexo/8-cosas-que-seguro-no-sabias-sobre-el-clitoris-el-organo-cuya-unica-funcion-es-el-placer-sexual-femenino-nid21012022">El clítoris tiene el glande, que es lo que asoma por fuera, pero que por dentro tiene unas 8 mil terminaciones nerviosas por dentro de la vulva. </a>Entonces, todo lo que roce el glande del clítoris y estimule la zona de la vulva va a provocar satisfacción y placer.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span><strong>“Las mujeres entre mujeres tienen orgasmos en más del 90% de los encuentros sexuales, </strong>a diferencia de las mujeres con varones que tienen muy pocos orgasmos cuando sólo se trata de penetración”, concluye, contundente la sexóloga.</span></span></span></span></span></span></p>\r\n',
+        position: 4,
+      },
+    ],
+    field_img_primary:
+      "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/sexo-posturas.jpg.webp?itok=vwYM1xF8",
+    urlSubCategory: "Sexo",
+    idSubject: 1,
+  },
+  {
+    title:
+      "Sapioerotismo: la química intelectual que lleva a que te enamores de la mente de tu pareja",
+    field_title_pre: "Pornocerebro.",
+    field_title:
+      "Qué es el sapioerotismo y cómo funciona la química intelectual",
+    field_description:
+      "¿Sentiste alguna vez que te desnudaban la mente y te calentó más que cualquier revolcón? Esta es una breve explicación de cómo podría estar funcionando tu sapioerotismo.",
+    author: "Denise Tempone",
+    field_content: [
+      {
+        field_content_title: null,
+        field_content:
+          "<p><strong>La inteligencia puede tener una influencia pornográfica en algunas personas. </strong>Así como a muchas nos estimula cierto tipo de belleza, la forma de una boca o, bueno..., un buen <em>six pack</em>, a otras nos puede volver locas una idea, una cosmovisión, un saber en particular.&nbsp;<strong>Para algunas personas, las palabras son capaces de construir puentes sólidos entre cerebros, corazones e incluso entrepiernas.</strong> Si alguna vez sentiste que una conversación te estaba desnudando más que sacarte la ropa, es probable que estés entre ellas. Entonces..., <strong>bienvenida al club de la sapioatracción.</strong></p>\r\n",
+        position: 1,
+      },
+      {
+        field_content_title: "Química intelectual",
+        field_content:
+          "<p>El de “sapiosexual” es solo uno de los muchos términos de identidad romántica y sexual que han surgido en los últimos años para clasificar una variedad de inclinaciones, preferencias y deseos sexuales. Sirve, como todas las definiciones, para establecer un margen de expectativas y preferencias claras. Y en este caso, funciona muy bien. Aunque la famosa “química” juega un rol importante en las respuestas sexuales instintivas de los seres humanos, los sapiosexuales parecen elegir potenciales amantes mucho más en función de lo que despiertan en sus cerebros que en el resto de sus cuerpos. Para ellos, la conexión intelectual es tan fundamental y definitiva que dejan de prestar atención a variables como el físico, la edad e incluso el género. Sabés que sos sapiosexual cuando comienza a gustarte alguien que no habías ni fichado solo tras escucharlo hablar. O podés enamorarte de una persona que nunca viste apenas leyendo sus textos.</p>\r\n\r\n<p>Sos de las que, en vez de mirar las fotos de un candidato, prefieren espiar sus libros favoritos y, definitivamente, idealizan las cocardas intelectuales porque despiertan pasión. ¿Cómo funciona esta atracción?</p>\r\n",
+        position: 2,
+      },
+      {
+        field_content_title: "Ser sapiosexual en un mundo visual",
+        field_content:
+          "<p>En un mundo que potencia las imágenes, que nos obliga a elegir a potenciales amores mediante una foto y que nos invita a cultivar el cuerpo más que nunca, los sapiosexuales están especialmente atentos... y hambrientos. <strong>La conexión intelectual, cuando aparece, resalta con el mayor de los fulgores porque no está destinada a suceder con demasiada facilidad. </strong></p>\r\n\r\n<p>Sin embargo, como quien busca encuentra, <strong>los sapiosexuales suelen dar con sus matches en redes que priorizan textos e ideas sobre posturas y cuerpos. </strong>No es nada inusual que los sapios se enamoren de personalidades de Twitter, que sigan con pasión a alguien por Medium y que flasheen con algún pódcast. Pero incluso en redes, en donde las fotos son necesarias y los códigos evidentes, podés encontrar a gente lista para hashtaguear como #sapiosexual para dejar bien en claro por donde debería ser el aproximamiento ideal.</p>\r\n",
+        position: 3,
+      },
+      {
+        field_content_title: "La magia del espejo",
+        field_content:
+          "<p>Pero ser sapiosexual no se trata únicamente de alimentar nuestro ego y encontrar un espejo ideal. <strong>Las personas sapio suelen ser extremadamente racionales y relacionarse con el mundo a través de discursos elaborados. </strong>Este tipo de personalidad suele estar en la búsqueda de palabras, teorías y saberes que enriquezcan la forma en que ven el mundo: que sumen explicaciones, teorías o poesía.</p>\r\n\r\n<p>Se trata de toparse con gente que hace del mundo un lugar más atractivo, más interesante, un lugar en el que den ganas de quedarse y perpetuarse. Y eso explica por qué las mentes brillantes despiertan pasión. Para ellos, que alguien los haga reír puede provocar una respuesta sexual más fuerte que la caricia más íntima y que les compartan un saber puede representar más contención que el mejor de los abrazos.&nbsp;</p>\r\n",
+        position: 4,
+      },
+      {
+        field_content_title: "Expansión de mundos",
+        field_content:
+          "<p>Seguramente haya en tu historial emocional alguna pareja que te parecía un crack y que con el paso del tiempo te pareció un bolu... O un señor que te deslumbraba y que, con el correr de los años, te fue pareciendo un simple chamuyero. La retórica es una gran arma que también puede confundir y que funciona, a veces, simplemente como una caricia al ego. Para dejarse seducir por una supuesta inteligencia, hay que partir de la base de que una también es brillante o, al menos, que puede seguir a una cabeza iluminada.</p>\r\n\r\n<p><strong>Este es uno de los mecanismos que erotizan a los sapios: sentir que están a la altura de alguien que con su intelecto les produce admiración. Espejarse en un inteligente, creemos, habla de nuestra inteligencia. </strong>Sin embargo, en el ámbito privado, una de las lecciones que más deben procesar los sapios, al igual que el resto de los humanos, es que una gran sagacidad intelectual no siempre hace a un buen amante, a una pareja ideal ni, mucho menos, a una gran persona.&nbsp;</p>\r\n",
+        position: 5,
+      },
+      {
+        field_content_title: "A temblar, mi amor",
+        field_content:
+          "<p>En un mundo de belleza perecedera, los sapios sienten construir algo más potente. Si las ideas crecen, no envejecen y los cerebros sabios evolucionan, no se atrofian, entonces hay mucho que esperar de estos encuentros. La promesa de algo que prevalece más que los músculos y el atractivo físico es algo que suele seducir en la tempestad. No importa qué pase, mientras esa persona pueda estimularse así, podrá llegar incluso a prescindir de los encuentros sexuales y sentirse totalmente satisfecha.</p>\r\n\r\n<p>Es de esta forma en que se han establecido algunos de los vínculos más sólidos que a los sapios hacen suspirar. ¿Es esta una forma de conexión más evolucionada o resulta tan perecedera como cualquier otra? La respuesta, si ya transitaste el camino del amor, ida y vuelta, seguramente te resulte obvia: no hay fórmulas, solo momentos y conexión. Aunque no garantice nada, sacarle el juguito a un flash erotizante siempre es una buena decisión, entonces disfrutemos de aquellos amantes que, en vez de hacernos temblar las piernas, nos hacen temblar la estantería. Esa en donde tenemos nuestros libros favoritos y bien acomodado lo que creíamos saber.&nbsp;</p>\r\n",
+        position: 6,
+      },
+    ],
+    field_img_primary:
+      "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/pornocerebro-ok.jpg.webp?itok=FfjRGznf",
+    urlSubCategory: "Sexo",
+    idSubject: 1,
+  },
+  {
+    title:
+      "Audioporno: qué es y cómo podés usar el sonido para potenciar el sexo",
+    field_title_pre: "¿Probaste el audioporno?",
+    field_title: "7 formas de potenciar el sexo a través de los sonidos",
+    field_description:
+      "Puede que en el sexo lo hayas visto todo. Pero ahora te toca escuchar... Estimulá tus oídos para explorar otras formas de potenciar tu placer. ",
+    author: "Denise Tempone",
+    field_content: [
+      {
+        field_content_title: null,
+        field_content:
+          '<p><span><span><span><span><span><span>Si nos tomamos al sexo como un juego placentero, está bueno explorar lo que nos sugieren sexólogas copadas que se enfocan en que cada quien encuentre su forma de vivir el placer. No tiene por qué ser siempre la penetración,<strong> hay mil formas del erotismo: la autoestimulación, las caricias por todo el cuerpo propio y ajeno, las prácticas orales, los besos, la exploración con los dedos</strong>… entre tantas cosas.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>La sexóloga clínica y educativa Analía Pereyra es una defensora de que cada quien explore y encuentre las prácticas sexoafectivas que más le gusten. En esta nota, <a href="https://www.somosohlala.com/amores/sexo/5-posiciones-sexuales-que-ponen-el-foco-en-el-orgasmo-femenino-nid11062022"><strong>nos acerca tres posturas, posiciones sexuales enfocadas en el placer.</strong></a></span></span></span></span></span></span></p>\r\n',
+        position: 1,
+      },
+      {
+        field_content_title: "Postura sexual para héteros",
+        field_content:
+          "<p><span><span><span><span><span><span>“Cuando hablamos de posturas, la número uno es la<strong> técnica de la alineación coital”, </strong>dice Analía. Y refiere a <strong>la pose llamada “El misionero”: </strong>En principio se pensaría que es la más clásica de todas las posiciones: en una pareja hétero consiste en que la mujer esté acostada y el varón se posicione encima, o bien, parados. </span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Pero la sexóloga suma algunas precisiones que garantizan el placer, sobre todo, de la mujer, que requiere algo más que el simple “bombeo” para llegar al clímax. “El varón se coloca penetrando un poquito más arriba de lo normal, como entrando por la parte superior del canal vaginal. Ahí, en lugar de empujar y hacer el bombeo hacia adentro y hacia afuera él debe mover la pelvis en un movimiento de balanceo. Y, si la mujer hace lo mismo y el balanceo es de los dos, ¡mucho mejor!”, dice.</span></span></span></span></span></span></p>\r\n",
+        position: 2,
+      },
+      {
+        field_content_title: "Postura sexual para parejas gays",
+        field_content:
+          '<p><span><span><span><span><span><span><strong>“Suele circular mucho que, entre los varones gays, siempre se da la penetración por detrás. </strong>Pero puede que a algunos varones les guste penetrar o ser penetrados solamente. O a algunos les gusten ambas cosas. A otros ninguna de las dos”, empieza la sexóloga. Alguna vez, <a href="https://www.somosohlala.com/amores/sexo/que-es-el-petting-o-sexo-sin-penetracion-nid31082022">en OHLALÁ! hablamos del “petting”. </a></span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>“Está bueno desarmar esto que antes se hablaba: ¿quién es activo, quién es pasivo? Porque siempre la “actividad” presupone a la persona que penetra, y hasta se asociaba que era más gay el que era penetrado”, dice, por comentarios de propios consultantes gays que atiende. “Hay que empezar a desarmar esas construcciones”.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Agrega: “Sepamos que generalmente <strong>ya no hay activos y pasivos, </strong>que no van esas etiquetas, y que los roles en las parejas cambian”. Suma que, también,<strong> se puede disfrutar del sexo entre varones gays sin practicar una penetración anal: se pueden realizar prácticas orales, de caricias, distintas manifestaciones sexo-afectivas.</strong></span></span></span></span></span></span></p>\r\n',
+        position: 3,
+      },
+      {
+        field_content_title: "Postura sexual para dos mujeres",
+        field_content:
+          '<p><span><span><span><span><span><span>“Una buena postura para dos personas con vulva podría ser colocándose frente a frente acostadas y, luego de la estimulación de todo el cuerpo -de autoestimularse con las manos cada una y/o cruzadas- se pueden entrelazar las piernas y, una de ellas, puede ponerse por encima simulando una postura parecida al misionero para que se genere el roce de las vulvas”, describe.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Sugiere que la persona que está abajo se ponga un almohadón por debajo de sus caderas para que la pelvis esté un poco más arriba y ahí genere una mejor fricción vulva con vulva.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span><strong>“Recordemos que las personas con vulva sentimos placer a partir de la estimulación del clítoris”, </strong>señala Analía. <a href="https://www.somosohlala.com/amores/sexo/8-cosas-que-seguro-no-sabias-sobre-el-clitoris-el-organo-cuya-unica-funcion-es-el-placer-sexual-femenino-nid21012022">El clítoris tiene el glande, que es lo que asoma por fuera, pero que por dentro tiene unas 8 mil terminaciones nerviosas por dentro de la vulva. </a>Entonces, todo lo que roce el glande del clítoris y estimule la zona de la vulva va a provocar satisfacción y placer.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span><strong>“Las mujeres entre mujeres tienen orgasmos en más del 90% de los encuentros sexuales, </strong>a diferencia de las mujeres con varones que tienen muy pocos orgasmos cuando sólo se trata de penetración”, concluye, contundente la sexóloga.</span></span></span></span></span></span></p>\r\n',
+        position: 4,
+      },
+    ],
+    field_img_primary:
+      "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/audioporno-principal.png.webp?itok=UZro8dvR",
+    urlSubCategory: "Sexo",
+    idSubject: 1,
+  },
 ];
 
 module.exports = function () {
