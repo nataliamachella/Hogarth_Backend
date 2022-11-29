@@ -461,6 +461,74 @@ const fakeNotes = [
     urlSubCategory: "Salud_Mental",
     idSubject: 1,
   },
+  {
+    title:
+      "The Weeknd en Argentina: lo que tenés que saber sobre su visita a Buenos Aires",
+    field_title_pre: "¡Llega a Argentina!",
+    field_title:
+      "Lo que tenés que saber sobre el show de The Weeknd en Buenos Aires",
+    field_description:
+      "El calendario de shows de 2023 se pone cada vez más interesante y, ahora, The Weeknd confirmó su visita a Buenos Aires.",
+    author: "Mariana Copland",
+    field_content: [
+      {
+        field_content_title: null,
+        field_content:
+          '<p>Como si fuera un premio por todo lo que perdimos durante los dos años de la pandemia, 2022 fue un verdadero lujo de recitales en vivo y visitas de artistas internacionales: <a href="https://www.somosohlala.com/actualidad/entretenimiento/coldplay-en-argentina-como-fue-el-segundo-show-de-la-banda-en-buenos-aires-nid27102022">desde el bombazo de Coldplay</a>, para pasar por&nbsp;<a href="https://www.somosohlala.com/actualidad/entretenimiento/rosalia-hizo-vibrar-buenos-aires-nid25082022">el imperdible show de Rosalía</a>, <a href="https://www.somosohlala.com/actualidad/entretenimiento/mon-laferte-en-el-movistar-arena-una-artista-pasional-que-emociono-a-todos-nid05112022">Mon Laferte revolucionando el Movistar Arena</a>&nbsp;o <a href="https://www.somosohlala.com/actualidad/entretenimiento/primavera-sound-buenos-aires-el-impresionante-show-de-bjork-en-el-costanera-sur-nid10112022">la inolvidable experiencia de&nbsp;Björk en el Primavera Sound</a>, y terminar con <a href="https://www.somosohlala.com/guia-ohlala/movida-cultural/c-tangana-en-buenos-aires-la-sobremesa-madrilena-que-nos-sorprendio-a-todos-nid23112022">revolucionario&nbsp;C Tangana que propuso un show fuera de serie</a>. ¡Y la lista no se termina ahí porque todavía tenemos a Harry Styles en los próximos días!</p>\r\n\r\n<p>Pero como si todo esto fuese poco, ya sabemos que 2023 llega también muy arriba. Es que hoy se confirmó que&nbsp;<strong>The Weeknd </strong>visitará Argentina durante octubre del año que viene con su gira <em>After Hours Til Dawn</em>.</p>\r\n',
+        position: 1,
+      },
+      {
+        field_content_title: null,
+        field_content:
+          "<p>Después de su mítico recital en el Lollapalooza en 2017 y habiendo lanzado desde entonces 2 discos de estudios nuevos, el artista se reencuentra con el público argentino en un show que en el que promete darlo todo:<strong> se trata de una experiencia inmersiva con elementos del teatro y las artes escénicas que se conjugan en una fiesta. </strong>Es la producción más grande de su carrera y la idea es que el concierto represente el recorrido creativo que hizo durante estos años reuniendo una multiplicidad de mundos que se abren a nivel visual y conceptual además de sonoro.</p>\r\n",
+        position: 2,
+      },
+      {
+        field_content_title: "Música y NFT",
+        field_content:
+          "<p>La gira será la primera en integrar tecnología 3.0, impulsada por Binance: quienes asistan al concierto recibirán NFT de recuerdo y accederán a una colección exclusiva diseñada para la gira de The Weeknd. El cinco por ciento de las ventas de la colección NFT de la próxima gira se donará al Fondo Humanitario XO.</p>\r\n",
+        position: 3,
+      },
+      {
+        field_content_title: "El concierto en Buenos Aires",
+        field_content:
+          '<p>The Weeknd se presentará el 13 de octubre en el Hipódromo de San Isidro. Las entradas todavía no salieron a la venta pero lo harán próximamente a través de la plataforma <a href="https://www.allaccess.com.ar/">AllAccess.com.ar</a>.</p>\r\n',
+        position: 4,
+      },
+    ],
+    field_img_primary:
+      "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/gettyimages-1193457474.jpg.webp?itok=JhPP4DYy",
+    urlSubCategory: "Entretenimiento",
+    idSubject: 1,
+  },
+  {
+    title:
+      "Mundial Qatar 2022: un hincha ingresó a la cancha con la bandera LGTBIQ+ y fue reprimido",
+    field_title_pre: "Mundial Qatar 2022: ",
+    field_title:
+      "un hincha ingresó a la cancha con la bandera LGTBIQ+ y fue reprimido",
+    field_description:
+      'Con una remera que decía "Respeto por las mujeres iraníes" y "Salven a Ucrania", así como una bandera arcoiris en la mano; el hincha corrió en la cancha durante el partido entre Uruguay y Portugal.',
+    author: "Sole Venesio",
+    field_content: [
+      {
+        field_content_title: null,
+        field_content:
+          '<p>Desde el momento en que la FIFA anunció que Qatar sería la sede del próximo Mundial, fueron millones las personas que se movilizaron y elevaron su voz para protestar en contra de esta decisión. ¿Por qué? <a href="https://www.somosohlala.com/guia-ohlala/viajes/mundial-qatar-cuales-son-los-codigos-de-vestimenta-nid30102022">Debido a diferentes normativas que rigen en el país</a>, <a href="https://www.somosohlala.com/liderazgo/empoderamiento/mundial-qatar-2022-5-cosas-en-las-que-qatar-atrasa-nid19112022">es un destino que persigue las diversidades, viola cientos de derechos humanos</a> y que, además, desde que se iniciaron las obras de construcción fueron miles los obreros extranjeros que murieron por agotamiento y las pobres condiciones de trabajo.</p>\r\n\r\n<p>Frente a esto -y más allá de la "fiesta del fútbol"- desde que arrancó el Mundial hay dos hechos que ya no deberían sorprendernos: la cantidad de historias de extranjeros que fueron perseguidos por la policía y aquellas historias de visitantes que -por ejemplo- no pudieron entrar a la cancha por tener una remera con un arcoiris. Quizá todo esto funcionó como caldo de cultivo para lo que sucedió este lunes cuando un hincha de fútbol ingresó a la cancha durante el partido entre Uruguay y Portugal. Con una remera azul que tenía el símbolo de Superman, de un lado decía "Salven a Ucrania" y del otro "Respeto por las mujeres iraníes", al mismo tiempo en que sostenía la bandera arcoiris de la comunidad LGTBIQ+ que decía "Paz".</p>\r\n',
+        position: 1,
+      },
+      {
+        field_content_title: null,
+        field_content:
+          '<p>Corriendo por 30 segundos alrededor de la cancha mientras diferentes personas de seguridad lo perseguían, ingresó al predio durante la segunda mitad del juego. Mientras que el manifestante fue conducido a través de un túnel,&nbsp;Thierry De Backer, oficial de prensa de la FIFA en el partido, dijo a The Associated Press&nbsp;que “no tenía idea” de lo que le pasó al manifestante y los organizadores no hicieron ningún comentario.</p>\r\n\r\n<p>Así como el periodista británico a quien no le permitieron entrar en la cancha por tener una remera con un arcoiris, a siete equipos europeos le negaron la posibilidad de&nbsp;pulseras multicolores "One Love" durante los partidos de la Copa del Mundo y cientos de fanáticos denunciaron que se los frenaba en las calles si utilizaban cualquier accesorio o símbolo que hiciera referencia a la lucha por los derechos de la comunidad LGTBIQ+</p>\r\n',
+        position: 2,
+      },
+    ],
+    field_img_primary:
+      "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/gettyimages-1445257385.jpg.webp?itok=8s8TgGMI",
+    urlSubCategory: "Historias",
+    idSubject: 1,
+  },
 ];
 
 module.exports = function () {
