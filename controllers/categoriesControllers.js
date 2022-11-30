@@ -13,7 +13,7 @@ exports.findByUrl = (req, res) => {
   const { url } = req.params;
   categoriesServices
     .findByUrl(url)
-    .then((category) => res.status(200).send(category))
+    .then((category) => res.status(200).json(category))
     .catch((err) => res.status(400).send(err));
 };
 
