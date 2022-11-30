@@ -13,8 +13,11 @@ TypeContent.init(
     name: {
       type: s.STRING,
     },
-    type: {
-      type: s.TEXT,
+    position: {
+      type: s.INTEGER,
+    },
+    urlCategory: {
+      type: s.STRING,
     },
   },
   { sequelize: db, modelName: "typeContent" }
