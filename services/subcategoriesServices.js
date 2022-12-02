@@ -45,11 +45,17 @@ exports.create = async (subcategory) => {
 };
 
 exports.change = async (id, body) => {
-  let subCategory = await SubCategory.update(body, {
-    where: { id: id },
-    returning: true,
-    plain: true,
-  });
+  const { name, urlCategory } = body;
+  let subCategory = await SubCategory.update(
+    { name },
+    {
+      where: { id: id },
+      returning: true,
+      plain: true,
+    }
+  );
+  let category = await categoriesServices.findByUrl(urlCategory);
+  subCategory[1].setCategory(category);
   return subCategory;
 };
 
