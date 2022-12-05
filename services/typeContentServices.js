@@ -44,3 +44,5 @@ exports.delete = async (id) => {
   let typeContent = await TypeContent.destroy({ where: { id: id } });
   return typeContent;
 };
+
+//asd

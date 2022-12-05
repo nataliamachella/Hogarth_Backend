@@ -64,3 +64,5 @@ exports.deleteTypeContent = (req, res, next) => {
     .then(() => res.status(204).send("Category deleted"))
     .catch(next);
 };
+
+//asdasd
