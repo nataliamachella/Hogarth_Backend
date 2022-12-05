@@ -12,7 +12,7 @@ typeContent = [
     urlCategory: "Calidad_de_Vida",
   },
   {
-    name: "BloqueF",
+    name: "BloqueD",
     position: 3,
     urlCategory: "Amores",
   },
