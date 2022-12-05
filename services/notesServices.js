@@ -81,7 +81,14 @@ exports.findByCategoryForBlock = async (url) => {
         attributes: ["url", "name"],
       },
     ],
-    attributes: ["id", "title"],
+    attributes: [
+      "id",
+      "title",
+      "field_img_primary",
+      "field_title",
+      "field_title_pre",
+      "field_description",
+    ],
     order: [["id", "DESC"]],
   });
   return notes;
