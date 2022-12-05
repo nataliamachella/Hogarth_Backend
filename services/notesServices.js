@@ -70,6 +70,23 @@ exports.findByCategory = async (url) => {
   return notes;
 };
 
+exports.findByCategoryForBlock = async (url) => {
+  const notes = await Note.findAll({
+    include: [
+      {
+        model: SubCategory,
+        include: [
+          { model: Category, where: { url: url }, attributes: ["url", "name"] },
+        ],
+        attributes: ["url", "name"],
+      },
+    ],
+    attributes: ["id", "title"],
+    order: [["id", "DESC"]],
+  });
+  return notes;
+};
+
 exports.create = async (note) => {
   const {
     title,
@@ -91,11 +108,6 @@ exports.create = async (note) => {
     field_img_primary: field_img_primary,
     field_content: field_content,
   });
-  field_content.map(async (contentMap) => {
-    const { field_content, position } = contentMap;
-    let content = await Content.create({ field_content, position });
-    content.setNote(noteCreated);
-  });
   let subcategory = await subCategoriesServices.findByUrl(urlSubCategory);
   let subject = await subjectServices.findById(idSubject);
   noteCreated.setSubCategory(subcategory);
@@ -104,13 +116,39 @@ exports.create = async (note) => {
 };
 
 exports.change = async (id, body) => {
-  let note = await Note.update(body, {
-    where: { id: id },
-    individualHooks: true,
-    returning: true,
-    plain: true,
-  });
-  return note;
+  const {
+    title,
+    field_title_pre,
+    field_title,
+    field_description,
+    author,
+    field_img_primary,
+    field_content,
+    urlSubCategory,
+    idSubject,
+  } = body;
+  let noteUpdate = await Note.update(
+    {
+      title: title,
+      field_title_pre: field_title_pre,
+      field_title: field_title,
+      field_description: field_description,
+      author: author,
+      field_img_primary: field_img_primary,
+      field_content: field_content,
+    },
+    {
+      where: { id: id },
+      individualHooks: true,
+      returning: true,
+      plain: true,
+    }
+  );
+  let subcategory = await subCategoriesServices.findByUrl(urlSubCategory);
+  let subject = await subjectServices.findById(idSubject);
+  noteUpdate[1].setSubCategory(subcategory);
+  subject.setNote(noteUpdate[1]);
+  return noteUpdate;
 };
 
 exports.deleteContent = async (id) => {

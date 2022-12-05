@@ -1,7 +1,8 @@
 const { TypeContent } = require("../models");
+const categoriesServices = require("../services/categoriesServices.js");
 
 exports.findAll = async () => {
-  let typeContent = await TypeContent.findAll();
+  let typeContent = await TypeContent.findAll({ order: [["id", "ASC"]] });
   return typeContent;
 };
 
@@ -12,6 +13,10 @@ exports.findByName = async (name) => {
 
 exports.create = async (typeContent) => {
   let typeContentCreated = await TypeContent.create(typeContent);
+  if (typeContent.urlCategory) {
+    let category = await categoriesServices.findByUrl(typeContent.urlCategory);
+    typeContentCreated.setCategory(category);
+  }
   return typeContentCreated;
 };
 
