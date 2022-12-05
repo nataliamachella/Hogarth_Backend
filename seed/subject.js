@@ -1,7 +1,23 @@
 const subjectsServices = require("../services/subjectsServices.js");
+const { Subject } = require("../models");
 
-module.exports = function () {
-  return subjectsServices.create({
+const fakeSubjetcts = [ 
+  {
     name: "triste",
-  });
+  },
+  {
+    name: "feliz",
+  },
+  {
+    name: "encantado"
+  },
+  {
+    name: "deprimido"
+  },
+  {
+    name: "confundido"
+  }
+]
+module.exports = function () {
+  return Subject.bulkCreate(fakeSubjetcts);
 };
