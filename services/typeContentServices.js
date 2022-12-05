@@ -1,8 +1,11 @@
-const { TypeContent } = require("../models");
+const { TypeContent, Category } = require("../models");
 const categoriesServices = require("../services/categoriesServices.js");
 
 exports.findAll = async () => {
-  let typeContent = await TypeContent.findAll({ order: [["id", "ASC"]] });
+  let typeContent = await TypeContent.findAll({
+    include: [Category],
+    order: [["id", "ASC"]],
+  });
   return typeContent;
 };
 
@@ -21,12 +24,19 @@ exports.create = async (typeContent) => {
 };
 
 exports.change = async (id, body) => {
-  let typeContent = await TypeContent.update(body, {
-    where: { id: id },
-    individualHooks: true,
-    returning: true,
-    plain: true,
-  });
+  const { name, urlCategory, position } = body;
+  let typeContent = await TypeContent.update(
+    { name: name, urlCategory: urlCategory, position: position },
+    {
+      where: { id: id },
+      returning: true,
+      plain: true,
+    }
+  );
+  if (urlCategory) {
+    let category = await categoriesServices.findByUrl(urlCategory);
+    typeContent[1].setCategory(category);
+  }
   return typeContent;
 };
 
@@ -34,3 +44,5 @@ exports.delete = async (id) => {
   let typeContent = await TypeContent.destroy({ where: { id: id } });
   return typeContent;
 };
+
+//asd

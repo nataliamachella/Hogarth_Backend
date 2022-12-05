@@ -14,8 +14,17 @@ exports.index = (req, res, next) => {
               .filter(
                 (note) => note.subCategory.category.url === type.urlCategory
               );
-            let { name, id, position, urlCategory, categoryId } = type;
-            return { name, position, urlCategory, id, categoryId, notesArr };
+            let { name, id, position, urlCategory, categoryId, category } =
+              type;
+            return {
+              name,
+              position,
+              urlCategory,
+              id,
+              categoryId,
+              category,
+              notesArr,
+            };
           });
           res.send(arr);
         })
@@ -28,7 +37,7 @@ exports.findByName = (req, res, next) => {
   typeContentServices
     .findByName(name)
     .then((typeContent) => res.send(typeContent))
-    .catch(() => res.send(next));
+    .catch(next);
 };
 
 exports.createTypeContent = (req, res, next) => {
@@ -36,7 +45,7 @@ exports.createTypeContent = (req, res, next) => {
   typeContentServices
     .create(typeContent)
     .then((createdTypeContent) => res.send(createdTypeContent))
-    .catch(() => res.send(next));
+    .catch(next);
 };
 
 exports.changeTypeContent = (req, res, next) => {
@@ -45,7 +54,7 @@ exports.changeTypeContent = (req, res, next) => {
   typeContentServices
     .change(id, typeContent)
     .then((createdTypeContent) => res.send(createdTypeContent))
-    .catch(() => res.send(next));
+    .catch(next);
 };
 
 exports.deleteTypeContent = (req, res, next) => {
@@ -53,5 +62,7 @@ exports.deleteTypeContent = (req, res, next) => {
   typeContentServices
     .create(id)
     .then(() => res.status(204).send("Category deleted"))
-    .catch(() => res.send(next));
+    .catch(next);
 };
+
+//asdasd

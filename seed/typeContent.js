@@ -17,8 +17,13 @@ typeContent = [
     urlCategory: "Amores",
   },
   {
-    name: "Widget",
+    name: "BloqueF",
     position: 4,
+    urlCategory: "Amores",
+  },
+  {
+    name: "Widget",
+    position: 5,
   },
 ];
 
