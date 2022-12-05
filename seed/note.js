@@ -43,7 +43,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-08/diseno_sin_titulo_1_5.jpg.webp",
     urlSubCategory: "Noticias_Locales",
-    idSubject: 1,
+    idSubject: 5,
   },
   {
     title:
@@ -83,7 +83,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/muffins-coco-ok.jpg.webp?itok=MCe0fvAo",
     urlSubCategory: "Cocina",
-    idSubject: 1,
+    idSubject: 2,
   },
   {
     title: "Qatar 2022: confianza mundial",
@@ -109,7 +109,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/messi.jpeg.webp?itok=LRcgnj6K",
     urlSubCategory: "Squad",
-    idSubject: 1,
+    idSubject: 2,
   },
   {
     title: "Dónde podés hacer tus constelaciones familiares",
@@ -159,7 +159,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/19_oct.jpg.webp?itok=roSl8Mjg",
     urlSubCategory: "Espiritualidad",
-    idSubject: 1,
+    idSubject: 5,
   },
   {
     title: "Horóscopo semanal signo por signo: ¿qué te dicen los astros?",
@@ -251,7 +251,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/astros-principal_2.png.webp?itok=gv3jPBNa",
     urlSubCategory: "Astrologia",
-    idSubject: 1,
+    idSubject: 2,
   },
   {
     title: "Détox en la piel: ¿qué son y para qué sirven los vahos faciales?",
@@ -296,7 +296,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/gettyimages-1215530452.jpeg.webp?itok=aHHXvkMW",
     urlSubCategory: "Belleza",
-    idSubject: 1,
+    idSubject: 2,
   },
   {
     title: "Citas sin alcohol: de qué se tratan y por qué son tendencia",
@@ -334,7 +334,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-10/citas_portada.jpg.webp?itok=tupYN1-_",
     urlSubCategory: "Relaciones",
-    idSubject: 1,
+    idSubject: 3,
   },
   {
     title: "Seguro de viaje: ¿qué tener en cuenta antes de contratarlo?",
@@ -411,7 +411,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/rocky_2.jpg.webp?itok=KH_Ci83x",
     urlSubCategory: "Recorridos",
-    idSubject: 1,
+    idSubject: 2,
   },
   {
     title: "Gigi Hadid y las zapatillas adidas x Gucci que ya marcan tendencia",
@@ -437,7 +437,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/gettyimages-1422965067.jpg.webp?itok=Q-9K2l-f",
     urlSubCategory: "Moda",
-    idSubject: 1,
+    idSubject: 5,
   },
   {
     title: "Modo supervivencia: 7 herramientas para volver a tomar el control",
@@ -504,7 +504,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/gettyimages-1193457474.jpg.webp?itok=JhPP4DYy",
     urlSubCategory: "Entretenimiento",
-    idSubject: 1,
+    idSubject: 2,
   },
   {
     title:
@@ -532,7 +532,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/gettyimages-1445257385.jpg.webp?itok=8s8TgGMI",
     urlSubCategory: "Historias",
-    idSubject: 1,
+    idSubject: 4,
   },
   {
     title: "3 posiciones sexuales para potenciar el placer",
@@ -570,7 +570,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/sexo-posturas.jpg.webp?itok=vwYM1xF8",
     urlSubCategory: "Sexo",
-    idSubject: 1,
+    idSubject: 3,
   },
   {
     title:
@@ -622,7 +622,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/pornocerebro-ok.jpg.webp?itok=FfjRGznf",
     urlSubCategory: "Sexo",
-    idSubject: 1,
+    idSubject: 2,
   },
   {
     title:
@@ -661,7 +661,7 @@ const fakeNotes = [
     field_img_primary:
       "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-11/audioporno-principal.png.webp?itok=UZro8dvR",
     urlSubCategory: "Sexo",
-    idSubject: 1,
+    idSubject: 5,
   },
 ];
 
