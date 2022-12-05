@@ -34,6 +34,9 @@ Note.init(
       type: s.STRING,
       allowNull: false,
     },
+    field_content: {
+      type: s.TEXT,
+    },
     url: {
       type: s.STRING,
     },

@@ -1,9 +1,26 @@
 const typeContentServices = require("../services/typeContentServices");
-exports.index = (req, res) => {
+const notesServices = require("../services/notesServices.js");
+
+exports.index = (req, res, next) => {
   typeContentServices
     .findAll()
-    .then((subjects) => res.status(200).send(subjects))
-    .catch((err) => res.status(400).send(err));
+    .then((typeContent) =>
+      notesServices
+        .findByCategoryForBlock(typeContent.map((item) => item.urlCategory))
+        .then((notes) => {
+          let arr = typeContent.map((type) => {
+            let notesArr = notes
+              .filter((note) => note.subCategory)
+              .filter(
+                (note) => note.subCategory.category.url === type.urlCategory
+              );
+            let { name, id, position, urlCategory, categoryId } = type;
+            return { name, position, urlCategory, id, categoryId, notesArr };
+          });
+          res.send(arr);
+        })
+    )
+    .catch(next);
 };
 
 exports.findByName = (req, res, next) => {
