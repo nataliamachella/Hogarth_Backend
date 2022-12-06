@@ -19,6 +19,9 @@ TypeContentCat.init(
     urlSubCategory: {
       type: s.STRING,
     },
+    urlCategory: {
+      type: s.STRING,
+    },
   },
   { sequelize: db, modelName: "typeContentCat" }
 );

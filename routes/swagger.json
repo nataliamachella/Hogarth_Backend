@@ -1031,6 +1031,36 @@
           }
         }
       },
+      "/api/typeContentBC/findByCategoryForAdmin/{url}": {
+        "get": {
+          "tags": ["Tipo de Contenido"],
+          "summary": "Obtiene una Tipo de Contenido",
+          "description": "Obtiene un Tipo de Contenido de acuerdo a su nombre",
+          "parameters": [
+            {
+              "name": "url",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "example": "Clasico"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TypeContent"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "/api/typeContent/create": {
         "post": {
           "tags": ["Tipo de Contenido"],
