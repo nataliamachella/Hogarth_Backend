@@ -99,8 +99,15 @@ exports.findByCategoryBC = (req, res, next) => {
             let notesArr = notes
               .filter((note) => note.subCategory)
               .filter((note) => note.subCategory.url === type.urlSubCategory);
-            let { name, id, position, urlSubCategory, categoryId, category } =
-              type;
+            let {
+              name,
+              id,
+              position,
+              urlSubCategory,
+              categoryId,
+              category,
+              urlCategory,
+            } = type;
             return {
               name,
               position,
@@ -109,6 +116,7 @@ exports.findByCategoryBC = (req, res, next) => {
               categoryId,
               category,
               notesArr,
+              urlCategory,
             };
           });
           res.send(arr);
