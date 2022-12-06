@@ -14,6 +14,14 @@ SubCategory.init(
       type: s.STRING,
       allowNull: false,
     },
+    icon_image: {
+      type: s.STRING,
+      // allowNull: false,
+    },
+    color: {
+      type: s.STRING,
+      // allowNull: false
+    },
     url: {
       type: s.STRING,
     },
