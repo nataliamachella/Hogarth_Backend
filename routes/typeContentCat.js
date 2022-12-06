@@ -5,6 +5,10 @@ const typeContentControllers = require("../controllers/typeContentController");
 router.get("/", typeContentControllers.indexBC);
 router.get("/findByName/:name", typeContentControllers.findByNameBC);
 router.get("/findByCategory/:url", typeContentControllers.findByCategoryBC);
+router.get(
+  "/findByCategoryForAdmin/:url",
+  typeContentControllers.findByCategoryBCForAdmin
+);
 router.post("/create", typeContentControllers.createTypeContentBC);
 router.put("/change/:id", typeContentControllers.changeTypeContentBC);
 router.delete("/delete/:id", typeContentControllers.deleteTypeContentBC);

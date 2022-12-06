@@ -117,6 +117,16 @@ exports.findByCategoryBC = (req, res, next) => {
     .catch(next);
 };
 
+exports.findByCategoryBCForAdmin = (req, res, next) => {
+  const { url } = req.params;
+  typeContentServices
+    .findByCategoryBC(url)
+    .then((typeContent) => {
+      res.send(typeContent);
+    })
+    .catch(next);
+};
+
 exports.createTypeContentBC = (req, res, next) => {
   const typeContent = req.body;
   typeContentServices
@@ -137,7 +147,7 @@ exports.changeTypeContentBC = (req, res, next) => {
 exports.deleteTypeContentBC = (req, res, next) => {
   const { id } = req.params;
   typeContentServices
-    .createBC(id)
+    .deleteBC(id)
     .then(() => res.status(204).send("Category deleted"))
     .catch(next);
 };

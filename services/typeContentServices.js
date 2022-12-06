@@ -75,6 +75,7 @@ exports.findByNameBC = async (name) => {
 
 exports.findByCategoryBC = async (url) => {
   let typeContent = await TypeContentCat.findAll({
+    where: { urlCategory: url },
     include: [
       {
         model: SubCategory,
@@ -101,20 +102,12 @@ exports.changeBC = async (id, body) => {
   const { name, urlSubCategory, position, category } = body;
   let beforeTypeContent = await TypeContentCat.findOne({ where: { id: id } });
   let findOldTypeContent = await TypeContentCat.findAll({
-    where: { position: position },
-    include: [
-      {
-        model: SubCategory,
-        include: [{ model: Category, where: { url: category } }],
-      },
-    ],
+    where: { position: position, urlCategory: category },
   });
-
-  let filter = findOldTypeContent.find((item) => item.subCategory !== null);
   await TypeContentCat.update(
     { position: beforeTypeContent.position },
     {
-      where: { id: filter.id },
+      where: { id: findOldTypeContent[0].id },
     }
   );
   let typeContent = await TypeContentCat.update(
