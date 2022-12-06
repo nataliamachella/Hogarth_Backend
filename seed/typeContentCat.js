@@ -8,17 +8,17 @@ typeContentCat = [
   },
   {
     name: "BloqueB",
-    position: 2,
+    position: 1,
     urlSubCategory: "Espiritualidad",
   },
   {
     name: "BloqueD",
-    position: 3,
+    position: 2,
     urlSubCategory: "Astrologia",
   },
   {
     name: "BloqueE",
-    position: 4,
+    position: 1,
     urlSubCategory: "Belleza",
   },
   {

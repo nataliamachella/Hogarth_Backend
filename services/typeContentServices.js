@@ -81,6 +81,7 @@ exports.findByCategoryBC = async (url) => {
         include: [{ model: Category, where: { url: url } }],
       },
     ],
+    order: [["id", "ASC"]],
   });
   return typeContent;
 };
@@ -97,25 +98,36 @@ exports.createBC = async (typeContent) => {
 };
 
 exports.changeBC = async (id, body) => {
-  const { name, urlCategory, position } = body;
+  const { name, urlSubCategory, position, category } = body;
   let beforeTypeContent = await TypeContentCat.findOne({ where: { id: id } });
+  let findOldTypeContent = await TypeContentCat.findAll({
+    where: { position: position },
+    include: [
+      {
+        model: SubCategory,
+        include: [{ model: Category, where: { url: category } }],
+      },
+    ],
+  });
+
+  let filter = findOldTypeContent.find((item) => item.subCategory !== null);
   await TypeContentCat.update(
     { position: beforeTypeContent.position },
     {
-      where: { position: position },
+      where: { id: filter.id },
     }
   );
   let typeContent = await TypeContentCat.update(
-    { name: name, urlCategory: urlCategory, position: position },
+    { name: name, urlSubCategory: urlSubCategory, position: position },
     {
       where: { id: id },
       returning: true,
       plain: true,
     }
   );
-  if (urlCategory) {
-    let subCategory = await subcategoriesServices.findByUrl(urlCategory);
-    typeContent[1].setCategory(subCategory);
+  if (urlSubCategory) {
+    let subCategory = await subcategoriesServices.findByUrl(urlSubCategory);
+    typeContent[1].setSubCategory(subCategory);
   }
   return typeContent;
 };

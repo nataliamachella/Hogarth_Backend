@@ -70,32 +70,7 @@ exports.deleteTypeContent = (req, res, next) => {
 exports.indexBC = (req, res, next) => {
   typeContentServices
     .findAllBC()
-    .then(
-      (typeContent) => res.send(typeContent)
-      // notesServices
-      //   .findByCategoryForBlock(typeContent.map((item) => item.urlCategory))
-      //   .then((notes) => {
-      //     let arr = typeContent.map((type) => {
-      //       let notesArr = notes
-      //         .filter((note) => note.subCategory)
-      //         .filter(
-      //           (note) => note.subCategory.category.url === type.urlCategory
-      //         );
-      //       let { name, id, position, urlCategory, categoryId, category } =
-      //         type;
-      //       return {
-      //         name,
-      //         position,
-      //         urlCategory,
-      //         id,
-      //         categoryId,
-      //         category,
-      //         notesArr,
-      //       };
-      //     });
-      //     res.send(arr);
-      //   })
-    )
+    .then((typeContent) => res.send(typeContent))
     .catch(next);
 };
 
@@ -124,12 +99,12 @@ exports.findByCategoryBC = (req, res, next) => {
             let notesArr = notes
               .filter((note) => note.subCategory)
               .filter((note) => note.subCategory.url === type.urlSubCategory);
-            let { name, id, position, urlCategory, categoryId, category } =
+            let { name, id, position, urlSubCategory, categoryId, category } =
               type;
             return {
               name,
               position,
-              urlCategory,
+              urlSubCategory,
               id,
               categoryId,
               category,
