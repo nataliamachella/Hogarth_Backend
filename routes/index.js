@@ -8,7 +8,9 @@ const notes = require("./notes.js");
 const subcategories = require("./subcategories.js");
 const categories = require("./categories.js");
 const subjects = require("./subjects.js");
+const groupSubjects = require("./groupSubject");
 const typeContent = require("./typeContent");
+const typeContentCat = require("./typeContentCat");
 const options = require("./swagger.json");
 
 const swaggerSpec = swaggerJSDoc(options);
@@ -19,6 +21,8 @@ router.use("/subcategories", subcategories);
 router.use("/categories", categories);
 router.use("/subjects", subjects);
 router.use("/typeContent", typeContent);
+router.use("/typeContentBC", typeContentCat);
+router.use("/groupsubjects", groupSubjects);
 router.use("/api-docs", swaggerUi.serve);
 router.get("/api-docs", swaggerUi.setup(swaggerSpec));
 

@@ -19,6 +19,10 @@
         "description": "Rutas referente a SubCategoria"
       },
       {
+        "name": "GroupSubject",
+        "description": "Rutas referente a GroupSubject"
+      },
+      {
         "name": "Subject",
         "description": "Rutas referente a Subject"
       },
@@ -728,7 +732,194 @@
           }
         }
       },
+      "/api/groupsubjects": {
+        "get": {
+          "tags": ["GroupSubject"],
+          "summary": "Obtiene Subjects",
+          "description": "Obtiene todas las Subjects existentes",
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Subject"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/groupsubjects/findInUse": {
+        "get": {
+          "tags": ["GroupSubject"],
+          "summary": "Obtiene una Subject",
+          "description": "Obtiene una Subject de acuerdo a su id",
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Subject"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/groupsubjects/findByID/{id}": {
+        "get": {
+          "tags": ["GroupSubject"],
+          "summary": "Obtiene una Subject",
+          "description": "Obtiene una Subject de acuerdo a su id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Subject"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/groupsubjects/create": {
+        "post": {
+          "tags": ["GroupSubject"],
+          "summary": "Crea una Subject",
+          "description": "Crea una Subject",
+          "requestBody": {
+            "description": "Crea una Subject",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubjectCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Subject"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/groupsubjects/change/{id}": {
+        "put": {
+          "tags": ["GroupSubject"],
+          "summary": "Actualiza una Subject",
+          "description": "Actualiza una Subject",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Actualiza una Subject de acuerdo al id pasado como parametro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubjectCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Subject"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/groupsubjects/delete/{id}": {
+        "delete": {
+          "tags": ["GroupSubject"],
+          "summary": "Elimina una Subject",
+          "description": "Elimina una Subject",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Operacion exitosa"
+            }
+          }
+        }
+      },
       "/api/typeContent": {
+        "get": {
+          "tags": ["Tipo de Contenido"],
+          "summary": "Obtiene Tipos de Contenido",
+          "description": "Obtiene todas los Tipos de Contenido existentes",
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/TypeContent"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/typeContentBC": {
         "get": {
           "tags": ["Tipo de Contenido"],
           "summary": "Obtiene Tipos de Contenido",
@@ -780,7 +971,97 @@
           }
         }
       },
+      "/api/typeContentBC/findByName/{name}": {
+        "get": {
+          "tags": ["Tipo de Contenido"],
+          "summary": "Obtiene una Tipo de Contenido",
+          "description": "Obtiene un Tipo de Contenido de acuerdo a su nombre",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "example": "Clasico"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TypeContent"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/typeContentBC/findByCategory/{url}": {
+        "get": {
+          "tags": ["Tipo de Contenido"],
+          "summary": "Obtiene una Tipo de Contenido",
+          "description": "Obtiene un Tipo de Contenido de acuerdo a su nombre",
+          "parameters": [
+            {
+              "name": "url",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "example": "Clasico"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TypeContent"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "/api/typeContent/create": {
+        "post": {
+          "tags": ["Tipo de Contenido"],
+          "summary": "Crea un Tipo de Contenido",
+          "description": "Crea un Tipo de Contenido",
+          "requestBody": {
+            "description": "Crea un Tipo de Contenido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypeContentCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TypeContent"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/typeContentBC/create": {
         "post": {
           "tags": ["Tipo de Contenido"],
           "summary": "Crea un Tipo de Contenido",
@@ -851,7 +1132,71 @@
           }
         }
       },
+      "/api/typeContentBC/change/{id}": {
+        "put": {
+          "tags": ["Tipo de Contenido"],
+          "summary": "Actualiza un Tipo de Contenido",
+          "description": "Actualiza un Tipo de Contenido",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Actualiza un Tipo de Contenido de acuerdo al id pasado como parametro",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypeContentCreated"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TypeContent"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "/api/typeContent/delete/{id}": {
+        "delete": {
+          "tags": ["Tipo de Contenido"],
+          "summary": "Elimina un Tipo de Contenido",
+          "description": "Elimina un Tipo de Contenido",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Operacion exitosa"
+            }
+          }
+        }
+      },
+      "/api/typeContentBC/delete/{id}": {
         "delete": {
           "tags": ["Tipo de Contenido"],
           "summary": "Elimina un Tipo de Contenido",

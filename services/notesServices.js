@@ -1,4 +1,4 @@
-const { Note, SubCategory, Category, Subject, Content } = require("../models");
+const { Note, SubCategory, Category, Subject } = require("../models");
 const sequelize = require("sequelize");
 const Op = sequelize.Op;
 const subCategoriesServices = require("./subcategoriesServices");
@@ -10,7 +10,6 @@ exports.findByUrl = async (url) => {
     include: [
       { model: SubCategory, include: [Category] },
       { model: Subject, as: "subject" },
-      { model: Content },
     ],
   });
   return note;
@@ -21,7 +20,6 @@ exports.findAll = async () => {
     include: [
       { model: SubCategory, include: [Category] },
       { model: Subject, as: "subject" },
-      { model: Content },
     ],
   });
   return notes;
@@ -51,7 +49,6 @@ exports.searchByQueryString = async (queryString) => {
     include: [
       { model: SubCategory, include: [Category] },
       { model: Subject, as: "subject" },
-      { model: Content },
     ],
   });
   return notes;
@@ -78,6 +75,28 @@ exports.findByCategoryForBlock = async (url) => {
         include: [
           { model: Category, where: { url: url }, attributes: ["url", "name"] },
         ],
+        attributes: ["url", "name"],
+      },
+    ],
+    attributes: [
+      "id",
+      "title",
+      "field_img_primary",
+      "field_title",
+      "field_title_pre",
+      "field_description",
+    ],
+    order: [["id", "DESC"]],
+  });
+  return notes;
+};
+
+exports.findBySubCategoryForBlock = async (url) => {
+  const notes = await Note.findAll({
+    include: [
+      {
+        model: SubCategory,
+        where: { url: url },
         attributes: ["url", "name"],
       },
     ],
@@ -156,11 +175,6 @@ exports.change = async (id, body) => {
   noteUpdate[1].setSubCategory(subcategory);
   subject.setNote(noteUpdate[1]);
   return noteUpdate;
-};
-
-exports.deleteContent = async (id) => {
-  let content = await Content.destroy({ where: { id: id } });
-  return content;
 };
 
 exports.delete = async (id) => {

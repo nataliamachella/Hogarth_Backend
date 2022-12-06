@@ -1,5 +1,11 @@
-const { TypeContent, Category } = require("../models");
-const categoriesServices = require("../services/categoriesServices.js");
+const {
+  TypeContent,
+  Category,
+  TypeContentCat,
+  SubCategory,
+} = require("../models");
+const categoriesServices = require("./categoriesServices.js");
+const subcategoriesServices = require("./subcategoriesServices.js");
 
 exports.findAll = async () => {
   let typeContent = await TypeContent.findAll({
@@ -25,6 +31,13 @@ exports.create = async (typeContent) => {
 
 exports.change = async (id, body) => {
   const { name, urlCategory, position } = body;
+  let beforeTypeContent = await TypeContent.findOne({ where: { id: id } });
+  await TypeContent.update(
+    { position: beforeTypeContent.position },
+    {
+      where: { position: position },
+    }
+  );
   let typeContent = await TypeContent.update(
     { name: name, urlCategory: urlCategory, position: position },
     {
@@ -45,4 +58,69 @@ exports.delete = async (id) => {
   return typeContent;
 };
 
-//asd
+//Subcategory
+
+exports.findAllBC = async () => {
+  let typeContent = await TypeContentCat.findAll({
+    include: [SubCategory],
+    order: [["id", "ASC"]],
+  });
+  return typeContent;
+};
+
+exports.findByNameBC = async (name) => {
+  let typeContent = await TypeContentCat.findOne({ where: { name: name } });
+  return typeContent;
+};
+
+exports.findByCategoryBC = async (url) => {
+  let typeContent = await TypeContentCat.findAll({
+    include: [
+      {
+        model: SubCategory,
+        include: [{ model: Category, where: { url: url } }],
+      },
+    ],
+  });
+  return typeContent;
+};
+
+exports.createBC = async (typeContent) => {
+  let typeContentCreated = await TypeContentCat.create(typeContent);
+  if (typeContent.urlSubCategory) {
+    let subCategory = await subcategoriesServices.findByUrl(
+      typeContent.urlSubCategory
+    );
+    typeContentCreated.setSubCategory(subCategory);
+  }
+  return typeContentCreated;
+};
+
+exports.changeBC = async (id, body) => {
+  const { name, urlCategory, position } = body;
+  let beforeTypeContent = await TypeContentCat.findOne({ where: { id: id } });
+  await TypeContentCat.update(
+    { position: beforeTypeContent.position },
+    {
+      where: { position: position },
+    }
+  );
+  let typeContent = await TypeContentCat.update(
+    { name: name, urlCategory: urlCategory, position: position },
+    {
+      where: { id: id },
+      returning: true,
+      plain: true,
+    }
+  );
+  if (urlCategory) {
+    let subCategory = await subcategoriesServices.findByUrl(urlCategory);
+    typeContent[1].setCategory(subCategory);
+  }
+  return typeContent;
+};
+
+exports.deleteBC = async (id) => {
+  let typeContent = await TypeContentCat.destroy({ where: { id: id } });
+  return typeContent;
+};
