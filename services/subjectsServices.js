@@ -1,5 +1,5 @@
 const { Subject, Note } = require("../models");
-const sequelize = require("sequelize");
+const groupSubjectsServices = require("../services/groupSubjectServices");
 
 exports.findAll = async () => {
   let subject = await Subject.findAll({
@@ -13,8 +13,11 @@ exports.findById = async (id) => {
   return subject;
 };
 
-exports.create = async (subject) => {
-  let subjectCreated = await Subject.create(subject);
+exports.create = async (body) => {
+  const { idGroup, name, image } = body;
+  let subjectCreated = await Subject.create({ name, image });
+  let groupSubject = await groupSubjectsServices.findById(idGroup);
+  subjectCreated.setGroupSubject(groupSubject);
   return subjectCreated;
 };
 
