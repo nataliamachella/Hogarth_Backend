@@ -85,6 +85,7 @@ exports.findByCategoryForBlock = async (url) => {
       "field_title",
       "field_title_pre",
       "field_description",
+      "url",
     ],
     order: [["id", "DESC"]],
   });
@@ -107,6 +108,7 @@ exports.findBySubCategoryForBlock = async (url) => {
       "field_title",
       "field_title_pre",
       "field_description",
+      "url",
     ],
     order: [["id", "DESC"]],
   });
