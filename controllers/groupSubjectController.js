@@ -16,7 +16,7 @@ exports.findInUse = (req, res, next) => {
       let subjects = group.subjects
         .map((subject) => {
           let randomNum = Math.round(
-            Math.random() * (subject.note.length - 0) + 0
+            Math.random() * (subject.note.length - 1 - 0) + 0
           );
           let { name, image } = subject;
           let random = subject.note[randomNum];

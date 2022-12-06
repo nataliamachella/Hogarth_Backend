@@ -10,12 +10,11 @@ module.exports = function () {
   return categorySeed().then(() => {
     subCategorySeed();
     groupSubjectSeed()
-      .then(() => {
-        subjectSeed().then(() => {
-          typeContentSeed();
-          typeContentCatSeed();
-          noteSeed();
-        });
+      .then(async () => {
+        await subjectSeed();
+        typeContentSeed();
+        typeContentCatSeed();
+        noteSeed();
       })
       .then(() => console.log("Database Seedeada"))
       .catch((err) => console.log(err));
