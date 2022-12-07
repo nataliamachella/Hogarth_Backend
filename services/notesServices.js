@@ -25,6 +25,52 @@ exports.findAll = async () => {
   return notes;
 };
 
+exports.findAllPagination = async (page) => {
+  let notes = await Note.findAndCountAll({
+    limit: 12,
+    offset: page ? page * 12 : 0,
+    include: [
+      { model: SubCategory, include: [Category] },
+      { model: Subject, as: "subject" },
+    ],
+    attributes: [
+      "id",
+      "title",
+      "field_title_pre",
+      "field_title",
+      "field_description",
+      "author",
+      "field_img_primary",
+      "url",
+    ],
+    order: [["id", "DESC"]],
+  });
+  return notes;
+};
+
+exports.findAllWithLimit = async (limit) => {
+  let notes = await Note.findAndCountAll({
+    limit: limit,
+    offset: 0,
+    include: [
+      { model: SubCategory, include: [Category] },
+      { model: Subject, as: "subject" },
+    ],
+    attributes: [
+      "id",
+      "title",
+      "field_title_pre",
+      "field_title",
+      "field_description",
+      "author",
+      "field_img_primary",
+      "url",
+    ],
+    order: [["id", "DESC"]],
+  });
+  return notes;
+};
+
 exports.searchByQueryString = async (queryString) => {
   let str = queryString.toLowerCase();
   let notes = await Note.findAll({

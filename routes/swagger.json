@@ -54,6 +54,72 @@
           }
         }
       },
+      "/api/notes/findForLimit/{limit}": {
+        "get": {
+          "tags": ["Notas"],
+          "parameters": [
+            {
+              "name": "limit",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 6
+              }
+            }
+          ],
+          "summary": "Obtiene notas",
+          "description": "Obtiene todas las notas existentes",
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Note"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/notes/findForPagination/{page}": {
+        "get": {
+          "tags": ["Notas"],
+          "parameters": [
+            {
+              "name": "page",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "example": 2
+              }
+            }
+          ],
+          "summary": "Obtiene notas",
+          "description": "Obtiene todas las notas existentes",
+          "responses": {
+            "200": {
+              "description": "Operacion exitosa",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Note"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "/api/notes/byURL/{url}": {
         "get": {
           "tags": ["Notas"],

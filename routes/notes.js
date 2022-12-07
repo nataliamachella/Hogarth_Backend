@@ -4,6 +4,8 @@ const notesControllers = require("../controllers/notesControllers.js");
 
 // GET ALL NOTES
 router.get("/", notesControllers.index);
+router.get("/findForLimit/:limit", notesControllers.findForLimit);
+router.get("/findForPagination/:page", notesControllers.findForPagination);
 
 // GET NOTE BY ID
 router.get("/byURL/:url", notesControllers.findByUrl);
