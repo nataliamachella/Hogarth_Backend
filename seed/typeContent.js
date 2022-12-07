@@ -19,12 +19,12 @@ typeContent = [
   {
     name: "BloqueE",
     position: 4,
-    urlCategory: "Amores",
+    urlCategory: "Turismo",
   },
   {
     name: "BloqueF",
     position: 5,
-    urlCategory: "Amores",
+    urlCategory: "Tendencias",
   },
   {
     name: "Widget",
