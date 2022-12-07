@@ -408,6 +408,20 @@ const fakeNotes = [
     urlSubCategory: "Moda",
     idSubject: 2,
   },
+  {
+    title: "Verano sastrero: 7 outfits súper cancheros que te van a copar",
+    field_title_pre: "Verano sastrero:",
+    field_title: "8 outfits super cancheros que te van a copar",
+    field_description:
+      "La tendencia sastrera llegó para quedarse y el verano no es un impedimento para usarla de día y de noche.",
+    author: "Mariana Copland",
+    field_content:
+      '<p><strong>Kylian Mbappé es una de las figuras del Mundial Qatar 2022,</strong> junto a Leonel Messi. El delantero del París Saint-Germain (PSG) en su vida personal parece que está enamorado: hace varios meses se lo vio con la modelo francesa Inés Rau, una mujer transgénero de 32 años.&nbsp;</p>\r\n\r\n<p><span><span><span><span><span><span><strong>¿Quén es Inés Rau?</strong> La modelo ganó protagonismo en 2017 cuando se convirtió en <strong>la primera persona trans en ser tapa de la revista Playboy. </strong>Se la considera una referente LGBTIQ y la portada de la revista Playboy fue una forma de celebrar su identidad. </span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Inés empezó su transición a los 16 años y a los 24 se empezó a nombrar como mujer transgénero. </span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>En el mundo de la moda, Inés también es una referente para la comunidad LGTBI: se la considera una importante voz para las personas trans.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>En 2018 Inés escribió un libro contando su historia personal. Se titula <em>Femme</em> y sostiene como síntesis la portada: "Vuelo, soy libre, estoy fuera de mí. Siento que mi alma por fin es libre, como si se abriera el candado que me ha tenido encerrada durante tanto tiempo. Esta vez sí, soy una mujer. Totalmente".</span></span></span></span></span></span></p>\r\n',
+    field_img_primary:
+      "https://bucket.somosohlala.com.ar/s3fs-public/styles/img_internal/public/2022-12/sastreria.png.webp?itok=b7wK0C4t",
+    urlSubCategory: "Moda",
+    idSubject: 1,
+  },
 ];
 
 module.exports = function () {
