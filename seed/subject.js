@@ -2,23 +2,23 @@ const subjectsServices = require("../services/subjectsServices.js");
 
 sub = [
   {
-    name: "triste",
+    name: "😍",
     idGroup: 1,
   },
   {
-    name: "feliz",
+    name: "😃",
     idGroup: 1,
   },
   {
-    name: "encantado",
+    name: "😐",
     idGroup: 1,
   },
   {
-    name: "deprimido",
+    name: "🙁",
     idGroup: 1,
   },
   {
-    name: "confundido",
+    name: "😭",
     idGroup: 1,
   },
 ];
