@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "16.17.1",
+    "node": ">=16",
     "npm": "8.15.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "Natalia Machella",
