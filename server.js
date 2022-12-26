@@ -3,6 +3,7 @@ const app = express();
 const router = require("./routes");
 const db = require("./config/db");
 const cors = require("cors");
+const port = process.env.PORT || 3001;
 // const cookieParser = require("cookie-parser");
 
 //seed
@@ -37,7 +38,5 @@ db.sync({ force: true })
   .then(() => {
     return seed();
   })
-  .then(() =>
-    app.listen(5432, () => console.log("Servidor escuchando en el puerto"))
-  )
+  .then(() => app.listen(port, () => console.log(`Listening on port ${port}!`)))
   .catch(console.error);
